@@ -33,7 +33,7 @@
 									<a class="menu-item" href="Projects/Softwares/andapps.php">Android</a>
 								</li>
 								<li>
-									<a class="menu-item disabled-link" href="Projects/Softwares/games.php">Games</a>
+									<a class="menu-item" href="Projects/Softwares/games.php">Games</a>
 								</li>
 								<li>
 									<a class="menu-item disabled-link" href="Projects/Softwares/genericsofts.php">Others</a>

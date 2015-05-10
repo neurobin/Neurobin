@@ -56,7 +56,7 @@
 				<div class="col-xs-2" id="content-left"></div>
 				<div class="col-xs-8 " id="content-soft">
 					<p>
-						This is a shell script written in bash to copy an entire website. It uses  <span class="quote">wget</span> to download webpages and mirror the site into a local directory.
+						This is a shell script written in bash to copy an entire website. It uses  <span class="quote">wget</span> to download web pages and mirror the site into a local directory.
 					</p>
 					<h2>Install:</h2>
 					<ol>
@@ -85,7 +85,7 @@
 								Spaces are allowed in path
 							</p>
 							<pre class="quote"><code>Ex: ~/Downloads/New Site
-~/Downloads/"New Site" is invalid because qoetes aren't allowed.</code></pre>
+~/Downloads/"New Site" is invalid because quotes aren't allowed.</code></pre>
 
 						</li>
 						<li>

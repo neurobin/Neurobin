@@ -32,10 +32,10 @@
 							<a href="JLIVECD">JLIVECD</a>
 						</li>
 						<li>
-							<a href="https://play.google.com/store/apps/details?id=com.jsoft.tictactoe">Tic Tac Toe</a>
+							<a href="TicTacToe">Tic Tac Toe</a>
 						</li>
 						<li>
-							<a href="#">29 (Card Game)</a>
+							<a href="MARRIAGE29">29 (Card Game)</a>
 						</li>
 						<li>
 							<p id="copyright">

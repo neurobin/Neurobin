@@ -108,7 +108,7 @@ argument sequence.
 --help shows this help menu
 
 -o overwrites destination directory
-This mode is not dependent on the existance of destination directory
+This mode is not dependent on the existence of destination directory
 
 
 --inplace is a dangerous option and should be avoided
@@ -130,7 +130,7 @@ or if you are in windows, simply run the desktop launcher
 
  <h2>Disclaimer:</h2>
 					<p>
-						This project emerged from personal needs. I like to write webpages with PHP and host most of my project related pages on github while am not particularly interested on using Jekyll. That's the main reason I wrote this script on the first place, to do the conversion from PHP to HTML. So this may not meet the standard needs of most of the PHP web developers out there.
+						This project emerged from personal needs. I like to write web pages with PHP and host most of my project related pages on github while am not particularly interested on using Jekyll. That's the main reason I wrote this script on the first place, to do the conversion from PHP to HTML. So this may not meet the standard needs of most of the PHP web developers out there.
 					</p>
 					<p>
 						It comes with a copy of <span class="quote">GPL v3 License</span> with no warranty of any kind, so use with care.

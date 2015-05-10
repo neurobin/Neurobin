@@ -8,56 +8,57 @@
 		require_once 'head.php';
 		?>
 
-		<meta name="description" content="Android apps">
-		<meta name="keywords" content="android, app, apps, softwares, softs, software, soft" />
+		<meta name="description" content="Games by Neurobin">
+		<meta name="keywords" content="games, softwares, Neurobin" />
 
-		<title>Android apps@Neurobin</title>
+		<title>Games@Neurobin</title>
 
 	</head>
 	<body onload="startTime()">
 
 		<?php
-		require_once 'header.php';
+		require_once ('header.php');
 		?>
 
 		<!--Navigation bar ends here -->
 		<!-- fixed share button-->
 		<?php
-			require_once ('fixedsharebutton.php');
+		require_once ('fixedsharebutton.php');
 		?>
 		<!-- fixed share button end-->
-		<div class="container" id="showoff-and">
+		<div class="container" id="showoff-win">
 			<div class="row" >
 				<div class="col-xs-12">
 
 					<div id="container" class="line-after">
-						<p><img alt="android logo" src="img/and.png" />Android<sup>Apps</sup>
+						<p><img alt="windows logo" src="img/games.jpeg" />Games
 						</p>
 					</div>
+
 				</div>
 			</div>
 		</div>
 
 		<!-- show off ends here-->
-		<div class="container" id="content-container2">
 
+		<div class="container" id="content-container2">
 			<div class="row">
 				<div class="col-xs-2" id="content-left"></div>
-				<div class="col-xs-8" id="content-and">
+				<div class="col-xs-8" id="content-win">
 					<ul>
 						<li>
-							<a href="https://play.google.com/store/apps/details?id=com.jsoft.tictactoe" target="_blank">Impossible To Win Tic Tac Toe</a>
+							<a href="MARRIAGE29">29 (Card Game)</a>
 						</li>
-
+						<li>
+							<a href="TicTacToe">IMW-Tic Tac Toe (Impossible To Win)</a>
+						</li>
 					</ul>
-
-					
-					
 				</div>
 				<div class="col-xs-2" id="content-right"></div>
 
 			</div>
 		</div>
+
 		<!--Content  ends here -->
 		<?php
 		require_once ('footer.php');
