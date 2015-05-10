@@ -1,54 +1,29 @@
 <!DOCTYPE html>
 <html lang="en">
 	<head>
-		<script>
-			if (window.location.protocol != "http:")
-				window.location.href = "http:" + window.location.href.substring(window.location.protocol.length);
-		</script>
 		<base href="../" />
-		<link href="http://gmpg.org/xfn/11" rel="profile">
+		<?php chdir("../"); ?>
 
-		<meta http-equiv="content-type" content="text/html; charset=utf-8">
+		<?php
+		require_once 'head.php';
+		?>
 		<meta name="description" content="Live CD/DVD customization tool">
 		<meta name="keywords" content="livecd, livedvd, customize, JLIVECD, linux, ubuntu, Linux Mint, ubuntu cd, ubuntu dvd, jlivecd" />
-		<meta name="author" content="Jahidul Hamid"/>
 
-		<!--[if lt IE 9]>
-		<script src="http://html5shiv.googlecode.com/svn/trunk/html5.js"></script>
-		<![endif]-->
-
-		<!-- CSS -->
-
-		<title>JLIVECD - Neurobin</title>
-		<meta charset="utf-8">
-		<meta name="viewport" content="width=device-width, initial-scale=1">
-		<link rel="stylesheet" href="http://maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap.min.css">
-		<link href="http://netdna.bootstrapcdn.com/font-awesome/4.1.0/css/font-awesome.min.css" rel="stylesheet">
-		<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
-		<script src="http://maxcdn.bootstrapcdn.com/bootstrap/3.2.0/js/bootstrap.min.js"></script>
-		<!-- My includes-->
-
-		<link rel="stylesheet" href="style/mycss.css" />
-		<script src="script/myjs.js"></script>
-
-		<!--My includes ends here -->
-
+		<title>JLIVECD@Neurobin</title>
 		<link rel="shortcut icon" href="JLIVECD/img/48.png" type="image/x-icon" />
 
 	</head>
 	<body onload="startTime()">
 
-						<?php
-		require_once('../header.php');
+		<?php
+		require_once ('header.php');
 		?>
 		<!--Navigation bar ends here -->
 		<!-- fixed share button-->
-		<div id="share-button-fixed">
-			<a id="share-btn1" href="http://www.facebook.com/sharer.php?u=http://neurobin.github.io/" onclick="return newShareWindow(this.href,400,400)" class="social-button-fixed"><i class="fa fa-facebook"></i> share</a>
-
-			<a id="share-btn2" href="http://twitter.com/home?status=http://neurobin.github.io/" onclick="return newShareWindow(this.href,400,400)" class="social-button-fixed"><i class="fa fa-twitter"></i> share</a>
-
-		</div>
+		<?php
+		require_once ('fixedsharebutton.php');
+		?>
 		<!-- fixed share button end-->
 		<div class="container" id="showoff-soft">
 			<div class="row line-after">
@@ -227,7 +202,11 @@ Is this a fresh start: (y/n)?n
 							<p>
 								In xubuntu 14.04.1 there's another bug: Can't open <span class="quote">/scripts/casper-functions</span> error) to fix this, run this code in chroot:
 							</p>
-							<pre><code>ln -s /usr/share/initramfs-tools/scripts /scripts</code></pre>														
+							<pre><code>ln -s /usr/share/initramfs-tools/scripts /scripts</code></pre>																																										
+
+
+
+
 
 
 
@@ -250,7 +229,7 @@ Is this a fresh start: (y/n)?n
 							<p>
 								If you want to change the timeout value then run this code in another terminal in your main system:
 							</p>
-							<pre><code>sudo echo <span class="edit">timeout_value</span> > /usr/local/JLIVECD/main/timeout</code></pre>														
+							<pre><code>sudo echo <span class="edit">timeout_value</span> > /usr/local/JLIVECD/main/timeout</code></pre>																																										
 
  <span class="quote">timeout_value</span> should be replaced with your desired time in seconds (ex: 12)
 						</li>
@@ -274,8 +253,8 @@ Is this a fresh start: (y/n)?n
 		</div>
 
 		<!--Content  ends here -->
-				<?php
-		require_once('../footer.php');
+		<?php
+		require_once ('footer.php');
 		?>
 
 	</body>

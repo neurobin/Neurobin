@@ -1,53 +1,27 @@
 <!DOCTYPE html>
 <html lang="en">
 	<head>
-		<script>
-			if (window.location.protocol != "http:")
-				window.location.href = "http:" + window.location.href.substring(window.location.protocol.length);
-		</script>
-
-		<link href="http://gmpg.org/xfn/11" rel="profile">
-
-		<meta http-equiv="content-type" content="text/html; charset=utf-8">
-		<meta name="description" content="Home Page">
+		<?php
+		require_once 'head.php';
+		?>
+		<meta name="description" content="Home Page@Neurobin">
 		<meta name="keywords" content="neurobin, c, c++, java, html, javascript, matlab, css, css3, shell, script, program, programming, languages, softwares, computers, software, app, apps, computer, binary, universe, macrocosm" />
-		<meta name="author" content="jahidul hamid" />
-		<!--[if lt IE 9]>
-		<script src="http://html5shiv.googlecode.com/svn/trunk/html5.js"></script>
-		<![endif]-->
 
-		<!-- CSS -->
-
-		<title>Home - Neurobin</title>
-		<meta charset="utf-8">
-		<meta name="viewport" content="width=device-width, initial-scale=1">
-		<link rel="stylesheet" href="http://maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap.min.css">
-		<link rel="stylesheet" href="style/mycss.css" />
-		<!--
-		<link href="http://fonts.googleapis.com/css?family=PT+Serif:400,400italic,700|PT+Sans:400" rel="stylesheet">
-		-->
-		<link href="http://netdna.bootstrapcdn.com/font-awesome/4.1.0/css/font-awesome.min.css" rel="stylesheet">
-		<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
-		<script src="http://maxcdn.bootstrapcdn.com/bootstrap/3.2.0/js/bootstrap.min.js"></script>
-		<script src="script/myjs.js"></script>
-
-		<link rel="shortcut icon" href="img/logo48.png" type="image/x-icon" />
+		<title>Home@Neurobin</title>
 
 	</head>
+
 	<body onload="startTime()">
 
 		<?php
-		require_once('header.php');
+		require_once ('header.php');
 		?>
 
 		<!--Navigation bar ends here -->
 		<!-- fixed share button-->
-		<div id="share-button-fixed">
-			<a id="share-btn1" href="http://www.facebook.com/sharer.php?u=http://neurobin.github.io/" onclick="return newShareWindow(this.href,400,400)" class="social-button-fixed"><i class="fa fa-facebook"></i> share</a>
-
-			<a id="share-btn2" href="http://twitter.com/home?status=http://neurobin.github.io/" onclick="return newShareWindow(this.href,400,400)" class="social-button-fixed"><i class="fa fa-twitter"></i> share</a>
-
-		</div>
+		<?php
+		require_once 'fixedsharebutton.php';
+		?>
 		<!-- fixed share button end-->
 		<div class="container" id="showoff">
 			<div class="row" >
@@ -151,9 +125,9 @@
 		</div>
 
 		<!--Content  ends here -->
-<?php
-require_once 'footer.php';
-?>
+		<?php
+		require_once 'footer.php';
+		?>
 
 	</body>
 </html>

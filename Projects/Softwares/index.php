@@ -1,15 +1,17 @@
 <!DOCTYPE html>
 <html lang="en">
 	<head>
-		<base href="../"/>
-		<?php chdir("../"); ?>
+
+		<base href="../../"/>
+		<?php chdir("../../"); ?>
 		<?php
 		require_once 'head.php';
 		?>
-		<meta name="description" content="Linux Tutorials by Neurobin">
-		<meta name="keywords" content="linux, tutorials" />
+		<meta http-equiv="content-type" content="text/html; charset=utf-8">
+		<meta name="description" content="Softwares by Neurobin">
+		<meta name="keywords" content="neurobin, projects" />
 
-		<title>Linux Tutorials@Neurobin</title>
+		<title>Softwares@Neurobin</title>
 
 	</head>
 	<body onload="startTime()">
@@ -21,7 +23,7 @@
 		<!--Navigation bar ends here -->
 		<!-- fixed share button-->
 		<?php
-		require_once 'fixedsharebutton.php';
+			require_once ('fixedsharebutton.php');
 		?>
 		<!-- fixed share button end-->
 		<div class="container" id="showoff-lin">
@@ -29,7 +31,8 @@
 				<div class="col-xs-12">
 
 					<div id="container" class="line-after">
-						<p><img alt="linux logo" src="img/linux.jpeg" />Linux<sup>Tutorials</sup>
+						<p>
+							Softwares
 						</p>
 					</div>
 
@@ -46,9 +49,14 @@
 				<div class="col-xs-8" id="content-tutorial">
 					<ul>
 						<li>
-							<a href="Tutorials/Linux/t1.php">Installing Softwares In Linux</a>
+							<a href="Projects/Softwares/linsofts.php">GNU/Linux</a>
 						</li>
-
+						<li>
+							<a href="Projects/Softwares/winsofts.php">Windows</a>
+						</li>
+						<li>
+							<a href="Projects/Softwares/andapps.php">Android</a>
+						</li>
 					</ul>
 				</div>
 				<div class="col-xs-2" id="content-right"></div>

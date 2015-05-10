@@ -1,55 +1,29 @@
 <!DOCTYPE html>
 <html lang="en">
 	<head>
-		<script>
-			if (window.location.protocol != "http:")
-				window.location.href = "http:" + window.location.href.substring(window.location.protocol.length);
-		</script>
 		<base href="../../" />
-		<link href="http://gmpg.org/xfn/11" rel="profile">
+		<?php chdir("../../"); ?>
+		<?php
+		require_once 'head.php';
+		?>
 
-		<meta http-equiv="content-type" content="text/html; charset=utf-8">
 		<meta name="description" content="Installing Softwares On Linux">
 		<meta name="keywords" content="tutorial, on, how, to, install, softwares, linux, app, installing, software" />
-		<meta name="author" content="Jahidul Hamid"/>
-
-		<!--[if lt IE 9]>
-		<script src="http://html5shiv.googlecode.com/svn/trunk/html5.js"></script>
-		<![endif]-->
-
-		<!-- CSS -->
 
 		<title>Installing Softwares On Linux</title>
-		<meta charset="utf-8">
-		<meta name="viewport" content="width=device-width, initial-scale=1">
-		<link rel="stylesheet" href="http://maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap.min.css">
-		<link href="http://netdna.bootstrapcdn.com/font-awesome/4.1.0/css/font-awesome.min.css" rel="stylesheet">
-		<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
-		<script src="http://maxcdn.bootstrapcdn.com/bootstrap/3.2.0/js/bootstrap.min.js"></script>
-		<!-- My includes-->
-
-		<link rel="stylesheet" href="style/mycss.css" />
-		<script src="script/myjs.js"></script>
-
-		<!--My includes ends here -->
-
-		<link rel="shortcut icon" href="img/logo48.png" type="image/x-icon" />
 
 	</head>
 	<body onload="startTime()">
 
-				<?php
-		require_once('../../header.php');
+		<?php
+		require_once ('header.php');
 		?>
 
 		<!--Navigation bar ends here -->
 		<!-- fixed share button-->
-		<div id="share-button-fixed">
-			<a id="share-btn1" href="http://www.facebook.com/sharer.php?u=http://neurobin.github.io/" onclick="return newShareWindow(this.href,400,400)" class="social-button-fixed"><i class="fa fa-facebook"></i> share</a>
-
-			<a id="share-btn2" href="http://twitter.com/home?status=http://neurobin.github.io/" onclick="return newShareWindow(this.href,400,400)" class="social-button-fixed"><i class="fa fa-twitter"></i> share</a>
-
-		</div>
+		<?php
+		require_once 'fixedsharebutton.php';
+		?>
 		<!-- fixed share button end-->
 		<div class="container" id="showoff-soft">
 			<div class="row line-after">
@@ -125,10 +99,11 @@
 					</p>
 
 					First open the terminal and run this command to get the latest version of the software:
-					<pre><code>sudo apt-get update</code></pre>															
+					<pre><code>sudo apt-get update</code></pre>																				
 					
 
 Then
+
 
 
 
@@ -267,7 +242,8 @@ sudo dpkg -i filename.deb
 					rpm has to be installed in the system, otherwise follow one of the processes #1,#2,#3 to install rpm (requires internet connection)
 					<pre><code>cd path_to_the_directory_that_contains_the_.rpm_file
 sudo rpm -i filename.rpm
-</code></pre>															
+</code></pre>																				
+
 
 
 
@@ -301,7 +277,8 @@ sudo rpm -i filename.rpm
 					<ol>
 						<li>
 							Open the archives with archive manager by double clicking it, then extract it.
-							<pre><code>cd path-to-the-extracted-folder</code></pre>																					
+							<pre><code>cd path-to-the-extracted-folder</code></pre>																												
+
 
 
 
@@ -329,6 +306,7 @@ or you can double click it and select run in terminal or simply run.
 
 
 
+
 									<p class="message">
 										N.B: Sometimes there is a file, something like your_software_name.sh is found instead of install.sh. for this case you have to replace install.sh with the correct name in the previous codes.
 									</p>
@@ -343,10 +321,12 @@ or you can double click it and select run in terminal or simply run
 
 
 
+
 								</li>
 								<li>
 									If you find a file named <span class="quote">make</span> (if there is no configure file) then 									<pre><code>make
 sudo make install</code></pre>
+
 
 
 
@@ -371,13 +351,14 @@ sudo make install</code></pre>
 
 					Code to make executable:
 					<pre><code>chmod +x filename_with_exact_path
-</code></pre>																				
+</code></pre>																									
 Then you can run it with :
 
  					<pre><code>cd filename_with_exact_path
 ./filename</code></pre>
 
 or double clicking it and selecting run in terminal or run, whatever supports your software.
+
 
 
 
@@ -390,8 +371,9 @@ or double clicking it and selecting run in terminal or run, whatever supports yo
 					Some softwares come with a .sh file to install it
 					<pre><code>chmod +x filename.sh 
 ./filename.sh <span class="comment"> or sudo ./filename.sh (if it needs root permission)</span>
-</code></pre>																				
+</code></pre>																									
 or double click it and select run in terminal or run, whatever supports your software.
+
 
 
 
@@ -404,8 +386,9 @@ or double click it and select run in terminal or run, whatever supports your sof
 					Some softwares come with a .run file to install it
 					<pre><code>chmod +x filename.run
 ./filename.run <span class="comment"> or sudo ./filename.run (if it needs root permission)</span>
-</code></pre>																				
+</code></pre>																									
 or double click it and select run in terminal or run, whatever supports your software.
+
 
 
 
@@ -429,7 +412,7 @@ or double click it and select run in terminal or run, whatever supports your sof
 
 		<!--Content  ends here -->
 		<?php
-		require_once('../../footer.php');
+		require_once ('footer.php');
 		?>
 
 	</body>

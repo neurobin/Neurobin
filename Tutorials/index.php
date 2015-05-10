@@ -1,15 +1,16 @@
 <!DOCTYPE html>
 <html lang="en">
 	<head>
+
 		<base href="../"/>
 		<?php chdir("../"); ?>
 		<?php
 		require_once 'head.php';
 		?>
-		<meta name="description" content="Linux Tutorials by Neurobin">
-		<meta name="keywords" content="linux, tutorials" />
+		<meta name="description" content="Tutorials by Neurobin">
+		<meta name="keywords" content="neurobin, tutorials" />
 
-		<title>Linux Tutorials@Neurobin</title>
+		<title>Tutorials@Neurobin</title>
 
 	</head>
 	<body onload="startTime()">
@@ -29,7 +30,7 @@
 				<div class="col-xs-12">
 
 					<div id="container" class="line-after">
-						<p><img alt="linux logo" src="img/linux.jpeg" />Linux<sup>Tutorials</sup>
+						<p><img alt="linux logo" src="img/tutor.jpg" />Tutorials
 						</p>
 					</div>
 
@@ -46,7 +47,7 @@
 				<div class="col-xs-8" id="content-tutorial">
 					<ul>
 						<li>
-							<a href="Tutorials/Linux/t1.php">Installing Softwares In Linux</a>
+							<a href="Tutorials/linuxtutorials.php">GNU/Linux</a>
 						</li>
 
 					</ul>
