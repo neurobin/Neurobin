@@ -11,7 +11,7 @@
 
 <!-- CSS -->
 
-<meta name="author" content="Jahidul hamid">
+<meta name="author" content="jahidul hamid" >
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <link rel="stylesheet" href="http://maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap.min.css">
 <link rel="stylesheet" href="style/mycss.css" />
@@ -19,5 +19,10 @@
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
 <script src="http://maxcdn.bootstrapcdn.com/bootstrap/3.2.0/js/bootstrap.min.js"></script>
 <script src="script/myjs.js"></script>
+
+
+<link rel="stylesheet" href="Highlightjs/styles/github.css">
+<script src="Highlightjs/highlight.pack.js"></script>
+<script>hljs.initHighlightingOnLoad();</script>
 
 <link rel="shortcut icon" href="img/logo48.png" type="image/x-icon" />
