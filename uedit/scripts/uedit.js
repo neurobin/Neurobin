@@ -97,6 +97,80 @@ function findIndexByIdFromJSON(id){
 
 
 
+/*var myEvent = window.attachEvent || window.addEventListener;
+var chkevent = window.attachEvent ? 'onbeforeunload' : 'beforeunload'; /// make IE7, IE8 compitable
+
+            myEvent(chkevent, function(e) { // For >=IE7, Chrome, Firefox
+
+         var confirmationMessage = 'Are you sure to leave the page?';  // a space
+                (e || window.event).returnValue = confirmationMessage;
+                return confirmationMessage;
+            });*/
+
+
+function getFromStorage() { 
+
+
+	if (!!localStorage.getItem("neurobin-uedit-html-div")) {
+    document.getElementById("html-div").value=localStorage.getItem("neurobin-uedit-html-div");}
+    if (!!localStorage.getItem("neurobin-uedit-html-p")) {
+    document.getElementById("html-p").value=localStorage.getItem("neurobin-uedit-html-p");}
+    if (!!localStorage.getItem("neurobin-uedit-html-h1")) {
+    document.getElementById("html-h1").value=localStorage.getItem("neurobin-uedit-html-h1");}
+    if (!!localStorage.getItem("neurobin-uedit-html-h2")) {
+    document.getElementById("html-h2").value=localStorage.getItem("neurobin-uedit-html-h2");}
+    if (!!localStorage.getItem("neurobin-uedit-html-h3")) {
+    document.getElementById("html-h3").value=localStorage.getItem("neurobin-uedit-html-h3");}
+    if (!!localStorage.getItem("neurobin-uedit-html-h4")) {
+    document.getElementById("html-h4").value=localStorage.getItem("neurobin-uedit-html-h4");}
+    if (!!localStorage.getItem("neurobin-uedit-html-h5")) {
+    document.getElementById("html-h5").value=localStorage.getItem("neurobin-uedit-html-h5");}
+    if (!!localStorage.getItem("neurobin-uedit-html-span")) {
+    document.getElementById("html-span").value=localStorage.getItem("neurobin-uedit-html-span");}
+    if (!!localStorage.getItem("neurobin-uedit-html-ul")) {
+    document.getElementById("html-ul").value=localStorage.getItem("neurobin-uedit-html-ul");}
+}
+
+document.addEventListener('DOMContentLoaded', function () {
+var fun=getFromStorage();
+    }, false);
+
+
+function fillStorage() {
+// Check browser support
+if (typeof(Storage) != "undefined") {
+    // Store
+    
+    if (!!document.getElementById("html-div")) {
+    localStorage.setItem("neurobin-uedit-html-div",document.getElementById("html-div").value);}
+     if (!!document.getElementById("html-p")) {
+    localStorage.setItem("neurobin-uedit-html-p",document.getElementById("html-p").value);}
+    if (!!document.getElementById("html-h1")) {
+    localStorage.setItem("neurobin-uedit-html-h1",document.getElementById("html-h1").value);}
+    if (!!document.getElementById("html-h2")) {
+    localStorage.setItem("neurobin-uedit-html-h2",document.getElementById("html-h2").value);}
+    if (!!document.getElementById("html-h3")) {
+    localStorage.setItem("neurobin-uedit-html-h3",document.getElementById("html-h3").value);}
+    if (!!document.getElementById("html-h4")) {
+    localStorage.setItem("neurobin-uedit-html-h4",document.getElementById("html-h4").value);}
+    if (!!document.getElementById("html-h5")) {
+    localStorage.setItem("neurobin-uedit-html-h5",document.getElementById("html-h5").value);}
+    if (!!document.getElementById("html-span")) {
+    localStorage.setItem("neurobin-uedit-html-span",document.getElementById("html-span").value);}
+    if (!!document.getElementById("html-ul")) {
+    localStorage.setItem("neurobin-uedit-html-ul",document.getElementById("html-ul").value);}
+    // Retrieve
+    //document.getElementById("result").innerHTML = localStorage.getItem("lastname");
+} else {
+    alert("Warning: Local Storage isn't supported..");
+}
+
+
+
+}
+
+
+
 
 function getIFrameDocument(aID){
   // if contentDocument exists, W3C compliant (Mozilla)
@@ -178,7 +252,8 @@ function replaceSelectedText(replacementText) {
 
 function wrapSelectedText(lang,elementId,id) {
 	//tagParse(lang,tagIndex);
-		    obj = JSON.parse(json);
+	var fun=fillStorage();
+	obj = JSON.parse(json);
     array=obj.html;
 	//alert(id+array[0].id);
 	tagIndex=findIndexByIdFromJSON(id);

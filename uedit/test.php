@@ -37,7 +37,7 @@
 <p>Class-------&gt;</p>
 </div>
 <div class="col-xs-8" id="classBar">
-<form>
+
 
 <table>
     <thead>
@@ -91,7 +91,7 @@
 
 
 
-</form>
+
 
 
 </div>
