@@ -864,19 +864,14 @@ body a:visited{
 }
 #editor-container{
   font-family: Consolas, Menlo, Monaco, Lucida Console, Liberation Mono, DejaVu Sans Mono, Bitstream Vera Sans Mono, Courier New, monospace, serif!important;
-  display: block!important;;
-  min-height: 700px!important;
-  max-height: 700px!important;
-  overflow: auto!important;;
+  height: 85vh;
   white-space: pre!important;;
   border-style: solid!important;;
   border-color: blue!important;
-  padding: 0 0 0 1em!important;;
-  margin: 0 0 0 1em!important;;
-  width: 100%!important;
-  font-size: 14px;
-  text-shadow: 1px;
-  font-weight: 100;
+  padding: 0 0 0 0!important;;
+  margin: 0 0 0 0!important;;
+  font-size: 1.15em;
+  width: 73vw;
 }
 
 #optionsPanel{
@@ -889,23 +884,17 @@ body a:visited{
   margin: 0 0 0 1em;
 }
 #ueditor{
-  margin: 5em 0 0 .7em;
+  margin: 1em 0 0 0;
   padding: 0 0 0 0;
 }
 #toolBox{
-  margin-left: 1em!important;
-  padding-left: 1em!important;
+ height: 80vh;;
+ overflow: auto;
+ z-index: 999;
+
 }
-#toolBox div{
-  margin-left: .8em;
-  padding-left: 0;
-  text-align: left!important;
-}
-#toolBox div button{
-  margin-left: .2em;
-  min-width: 2.5em;
-  font-size: 15px;
-}
+
+
 #classBar table {
   border: solid .1px blue;
   margin-bottom: 1em;
@@ -916,7 +905,29 @@ body a:visited{
 }
 #classBar td,th{
   border: dotted .1px aqua;
+  font-size: 1.25em;
+  font-family: Arial,Liberation Sans,DejaVu Sans,sans-serif;
+  
 }
 #classBar th{
   text-align: center;
+}
+#navbar {
+  width: 100%;
+  margin: 0 0 0 0!important;;
+  padding: 0 0 0 0!important;
+}
+#fixed-top-navbar{
+  position: fixed;
+  top: -1px;
+  left: 0;
+  width: 100%;
+  z-index: 999;
+}
+#toolBar1{
+  margin-left: 1em;
+  margin-right: 1em;
+}
+#ueditor-row{
+  width: 100%!important;
 }

@@ -133,6 +133,7 @@ function getFromStorage() {
 
 document.addEventListener('DOMContentLoaded', function () {
 var fun=getFromStorage();
+$("body").css("overflow", "hidden");
     }, false);
 
 
@@ -345,6 +346,7 @@ function createButtonFromJSON(parentId,lang,classname){
     i=0;
     for(i=0;i<array.length;i++){
     var element = document.createElement("BUTTON");
+    var brElement = document.createElement("BR");
     //Assign different attributes to the element. 
     element.innerHTML=array[i].innerhtml;
     element.id=lang+"-btn"+i;
@@ -357,6 +359,7 @@ function createButtonFromJSON(parentId,lang,classname){
     var foo = document.getElementById(parentId);
     //Append the element in page (in span).  
     foo.appendChild(element);
+    foo.appendChild(brElement);
 }
 
 }
