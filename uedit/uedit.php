@@ -42,22 +42,27 @@
 
 <div class="input-dialog" id="uedit-add-button-dialog">
 <p>Add Button</p>
-<input type="text" id="uedit-add-button-dialog-lang" placeholder="Language/Section" value="html" title="Put the language/section name" maxlength="30">
+<input name="input-dialog-input-field" type="text" id="uedit-add-button-dialog-lang" placeholder="Language/Section" value="html" title="Put the language/section name" maxlength="30">
 
 <br>
-<input type="text" id="uedit-add-button-dialog-start" placeholder="Start" value="" title="Put the start tag">
+<input name="input-dialog-input-field" type="text" id="uedit-add-button-dialog-start" placeholder="Start" value="" title="Put the start tag">
 <br>
-<input type="text" id="uedit-add-button-dialog-end" placeholder="End" value="" title="Put the end tag">
+<input name="input-dialog-input-field" type="text" id="uedit-add-button-dialog-end" placeholder="End" value="" title="Put the end tag">
 <br>
-<input type="text" id="uedit-add-button-dialog-title" placeholder="Title" value="Custom Button" title="Put the title" required="true">
+<input name="input-dialog-input-field" type="text" id="uedit-add-button-dialog-title" placeholder="Title" value="Custom Button" title="Put the title">
+
+<br>
+<input name="input-dialog-input-field" type="text" id="uedit-add-button-dialog-class" placeholder="Class" value="" title="Put the class name">
+<br>
+<input name="input-dialog-input-field" type="text" id="uedit-add-button-dialog-innerhtml" placeholder="Button name" value="" title="Put the button name" required="true">
 <span class="required-flag"> *</span>
 <br>
-<input type="text" id="uedit-add-button-dialog-class" placeholder="Class" value="" title="Put the class name">
+<select name="input-dialog-input-field" id="uedit-add-button-dialog-type" title="Type of input box">
+    <option value="input">Text Field</option>
+    <option value="textarea">Text Area</option>
+</select>
 <br>
-<input type="text" id="uedit-add-button-dialog-innerhtml" placeholder="Button name" value="" title="Put the button name" required="true">
-<span class="required-flag"> *</span>
-<br>
-<input type="number" id="uedit-add-button-dialog-position" placeholder="Position" value="" title="Put the position index">
+<input name="input-dialog-input-field" type="number" id="uedit-add-button-dialog-position" placeholder="Position" value="" title="Put the position index">
 <br>
 <button id="uedit-add-button-dialog-cancel-button" formnovalidate="true" onclick="itemGone('uedit-add-button-dialog')">Close</button>
 <button id="uedit-add-button-dialog-submit-button" onclick="validateForm('uedit-add-button-dialog','toolBar1')">Add</button>
@@ -77,13 +82,25 @@
 <div class="col-xs-12" id="settings-bar">
 <button id="uedit-settings" title="Settings" class="options-button"></button>
 <button id="add-button" title="Add new button" class="options-button" onclick="showInputDialog('uedit-add-button-dialog')"></button>
+<button id="uedit-delete-button" title="Delete button/s" class="options-button" onclick="showButtonDeleteDialog('uedit-delete-button-dialog')"></button>
 <button id="reset-toolBar1-button" title="Reset To Default" class="options-button" onclick="resetButtonsToDefault('toolBar1','html','editor-buttons')"></button>
 <br>
+<table id="uedit-save-as-table">
+<tr>
+<td id="uedit-save-as-table-tr1-td1" style="width:40%;">
+<button id="uedit-save-as-button" class="options-button" onclick="saveAsUeditMainContent()">Save</button>
+</td>
+<td id="uedit-save-as-table-tr1-td2" style="width:60%;">
+<textarea id="save-as-path-input-field" style="resize:none;"></textarea>
+</td>
+</tr>
+</table>
 </div>
 </div>
 <div class="row">
 <div class="col-xs-12" id="toolBox">
-<div id="toolBar1">
+<div >
+<table id="toolBar1"></table>
 
 
 </div>
@@ -109,8 +126,11 @@
 	
 
 <script>
+initAceEditor();
 createButtonFromJSON('toolBar1',"html","editor-buttons");
-var fun=getFromStorage();
+getFromStorage();
+setMainContentFromStorage();
+autoSaveMainContent();
 
 </script>
 	</body>

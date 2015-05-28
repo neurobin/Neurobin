@@ -1,6 +1,44 @@
 defer = "true";
-   
-$.getScript("uedit/scripts/src-noconflict/ace.js", function(){
+
+
+
+var tagStart="",tagEnd="";
+sLnk="";
+localStoragePrefix="neurobin-uedit-";
+projectName="uedit";
+autoSaveTimeout=5000;
+
+var jsonDefault = '{"html":[' +
+'{"id":"","start":"","end":"","title":"Define it manually","class":"editor-button","innerhtml":"General","type":"textarea"  },' +
+'{"id":"","start":"<!-- ","end":" -->","title":"Comment","class":"editor-button","innerhtml":"Comment","type":"input"  },' +
+'{"id":"","start":"<p>","end":"</p>","title":"Paragraph","class":"editor-button","innerhtml":"P","type":"input"  },' +
+'{"id":"","start":"<a ","end":"</a>","title":"Hyperlink","class":"editor-button","innerhtml":"a href","href":"","type":"input"  },' +
+'{"id":"","start":"<ol>","end":"</ol>","title":"Ordered List","class":"editor-button","innerhtml":"ol","type":"input"  },' +
+'{"id":"","start":"<ul>","end":"</ul>","title":"Unordered List","class":"editor-button","innerhtml":"ul","type":"input"  },' +
+'{"id":"","start":"<li>","end":"</li>","title":"List Item","class":"editor-button","innerhtml":"li","type":"input"  },' +
+'{"id":"","start":"<quote>","end":"</quote>","title":"Quote","class":"editor-button","innerhtml":"q","type":"input"  },' +
+'{"id":"","start":"<blockquote>","end":"</blockquote>","title":"Block Quote","class":"editor-button","innerhtml":"bq","type":"input"  },' +
+'{"id":"","start":"<pre>","end":"</pre>","title":"pre","class":"editor-button","innerhtml":"pre","type":"input"  },' +
+'{"id":"","start":"<code>","end":"</code>","title":"Inline Code","class":"editor-button","innerhtml":"code","type":"input"  },' +
+'{"id":"","start":"<pre><code>","end":"</code></pre>","title":"Pre-formatted Code","class":"editor-button","innerhtml":"pre/code","type":"input"  },' +
+'{"id":"","start":"<img ","end":" />","title":"Image","class":"editor-button","innerhtml":"img","src":"","type":"input"  },' +
+'{"id":"","start":"<span>","end":"</span>","title":"Span","class":"editor-button","innerhtml":"span","type":"input"  },' +
+'{"id":"","start":"<div>","end":"</div>","title":"Div","class":"editor-button","innerhtml":"div","type":"input"  },' +
+'{"id":"","start":"<sup>","end":"</sup>","title":"Superscript","class":"editor-button","innerhtml":"sup","type":"input"  },' +
+'{"id":"","start":"<sub>","end":"</sub>","title":"Subscript","class":"editor-button","innerhtml":"sub","type":"input"  },' +
+'{"id":"","start":"<kbd>","end":"</kbd>","title":"Keboad key","class":"editor-button","innerhtml":"kbd","type":"input"  },' +
+'{"id":"","start":"","end":"<hr>","title":"Horizontal Rule","class":"editor-button","innerhtml":"hr","type":"input"  },' +
+'{"id":"","start":"","end":"<br>","title":"New Line","class":"editor-button","innerhtml":"br","type":"input"  },' +
+'{"id":"","start":"<var>","end":"</var>","title":"Variable","class":"editor-button","innerhtml":"var","type":"input"  },' +
+'{"id":"","start":"<del>","end":"</del>","title":"Deleted text","class":"editor-button","innerhtml":"<del>del</del>","type":"input"  }]}';
+
+json=jsonDefault;
+
+
+
+
+function initAceEditor(){  
+
 
  //alert("Script loaded and executed.");
  ace.require("ace/ext/language_tools");
@@ -14,45 +52,11 @@ editor = ace.edit("editor-container");
     
 });
    // Use anything defined in the loaded script...
-});
+
+}
 
 
 
-var tagStart="",tagEnd="";
-sLnk="";
-localStoragePrefix="neurobin-uedit-";
-projectName="uedit";
-
-
-var jsonDefault = '{"html":[' +
-'{"id":"","start":"","end":"","title":"Define it manually","class":"editor-button","innerhtml":"General"},' +
-'{"id":"","start":"<!-- ","end":" -->","title":"Comment","class":"editor-button","innerhtml":"Comment"  },' +
-'{"id":"","start":"<p>","end":"</p>","title":"Paragraph","class":"editor-button","innerhtml":"P"  },' +
-'{"id":"","start":"<a ","end":"</a>","title":"Hyperlink","class":"editor-button","innerhtml":"a href","href":""  },' +
-'{"id":"","start":"<ol>","end":"</ol>","title":"Ordered List","class":"editor-button","innerhtml":"ol"  },' +
-'{"id":"","start":"<ul>","end":"</ul>","title":"Unordered List","class":"editor-button","innerhtml":"ul"  },' +
-'{"id":"","start":"<li>","end":"</li>","title":"List Item","class":"editor-button","innerhtml":"li"  },' +
-'{"id":"","start":"<dl>","end":"</dl>","title":"Description List","class":"editor-button","innerhtml":"dl"  },' +
-'{"id":"","start":"<dt>","end":"</dt>","title":"Description Term","class":"editor-button","innerhtml":"dt"  },' +
-'{"id":"","start":"<dd>","end":"</dd>","title":"Description value","class":"editor-button","innerhtml":"dd"  },' +
-'{"id":"","start":"<quote>","end":"</quote>","title":"Quote","class":"editor-button","innerhtml":"q"  },' +
-'{"id":"","start":"<blockquote>","end":"</blockquote>","title":"Block Quote","class":"editor-button","innerhtml":"bq"  },' +
-'{"id":"","start":"<pre>","end":"</pre>","title":"pre","class":"editor-button","innerhtml":"pre"  },' +
-'{"id":"","start":"<code>","end":"</code>","title":"Inline Code","class":"editor-button","innerhtml":"code"  },' +
-'{"id":"","start":"<pre><code>","end":"</code></pre>","title":"Pre-formatted Code","class":"editor-button","innerhtml":"pre/code"  },' +
-'{"id":"","start":"<em>","end":"</em>","title":"em","class":"editor-button","innerhtml":"em"  },' +
-'{"id":"","start":"<img ","end":" />","title":"Image","class":"editor-button","innerhtml":"img","src":""  },' +
-'{"id":"","start":"<span>","end":"</span>","title":"Span","class":"editor-button","innerhtml":"span"  },' +
-'{"id":"","start":"<div>","end":"</div>","title":"Div","class":"editor-button","innerhtml":"div"  },' +
-'{"id":"","start":"<sup>","end":"</sup>","title":"Superscript","class":"editor-button","innerhtml":"sup"  },' +
-'{"id":"","start":"<sub>","end":"</sub>","title":"Subscript","class":"editor-button","innerhtml":"sub"  },' +
-'{"id":"","start":"<kbd>","end":"</kbd>","title":"Keboad key","class":"editor-button","innerhtml":"kbd"  },' +
-'{"id":"","start":"","end":"<hr>","title":"Horizontal Rule","class":"editor-button","innerhtml":"hr"  },' +
-'{"id":"","start":"","end":"<br>","title":"New Line","class":"editor-button","innerhtml":"br"  },' +
-'{"id":"","start":"<var>","end":"</var>","title":"Variable","class":"editor-button","innerhtml":"var"  },' +
-'{"id":"","start":"<del>","end":"</del>","title":"Deleted text","class":"editor-button","innerhtml":"del"  }]}';
-
-json=jsonDefault;
 
 function findIndexByIdFromJSON(id){
 		   var obj = JSON.parse(json);
@@ -78,26 +82,45 @@ var chkevent = window.attachEvent ? 'onbeforeunload' : 'beforeunload'; /// make 
             });
 
 
+function getFromStorageById(id){
+if (typeof(Storage) != "undefined") {
+
+return localStorage.getItem(localStoragePrefix+id);
+
+}
+else {alert("Warning: Local Storage isn't supported..");}
+
+}
+
+
+function getInputDialogFieldsFromStorage() {
+var inputdialogfieldes=document.getElementsByName('input-dialog-input-field');
+for (var i=0;i<inputdialogfieldes.length;i++) {
+//if (localStorage.getItem("neurobin-uedit-"+inputdialogfieldes[i].id!="")) {
+inputdialogfieldes[i].value=localStorage.getItem("neurobin-uedit-"+inputdialogfieldes[i].id);}//}
+}
+
+
+function getToolBar1InputFields() {
+var toolBar1inputfields=document.getElementsByName('toolBar1-input-field');
+
+for (var i=0;i<toolBar1inputfields.length;i++) {
+//if (localStorage.getItem("neurobin-uedit-"+toolBar1inputfields[i].id)!="") {
+toolBar1inputfields[i].value=localStorage.getItem("neurobin-uedit-"+toolBar1inputfields[i].id);}//}
+
+}
+
+
 function getFromStorage() { 
 
 /*	if (!!localStorage.getItem("neurobin-uedit-html-div")) {
     document.getElementById("html-div").value=localStorage.getItem("neurobin-uedit-html-div");}*/
 
-var inputdialogfieldes=document.getElementById('uedit-add-button-dialog').getElementsByTagName('input');
-var toolBar1inputfields=document.getElementById('toolBar1').getElementsByTagName('input');
+getInputDialogFieldsFromStorage();
+getToolBar1InputFields();
 
 
-for (var i=0;i<inputdialogfieldes.length;i++) {
-//if (!!localStorage.getItem("neurobin-uedit-"+inputdialogfieldes[i].id)) {
-inputdialogfieldes[i].value=localStorage.getItem("neurobin-uedit-"+inputdialogfieldes[i].id);}//}
-
-for (var i=0;i<toolBar1inputfields.length;i++) {
-//if (!!localStorage.getItem("neurobin-uedit-"+toolBar1inputfields[i].id)) {
-toolBar1inputfields[i].value=localStorage.getItem("neurobin-uedit-"+toolBar1inputfields[i].id);}//}
-
-
-var jsonString=localStorage.getItem('neurobin-uedit-json');
-if (jsonString!=null&&jsonString!="") {json=jsonString;}
+json=getJSONString();
 
 
 
@@ -116,18 +139,10 @@ localStorage.setItem(localStoragePrefix+id,value);
 else {alert("Warning: Local Storage isn't supported..");}
 }
 
-function getFromStorageById(id){
-if (typeof(Storage) != "undefined") {
 
-return localStorage.getItem(localStoragePrefix+id);
-
-}
-else {alert("Warning: Local Storage isn't supported..");}
-
-}
     
 function fillStorageFromInputDialogFields() {
-var inputdialogfieldes=document.getElementById('uedit-add-button-dialog').getElementsByTagName('input');
+var inputdialogfieldes=document.getElementsByName('input-dialog-input-field');
     for (var i=0;i<inputdialogfieldes.length;i++) {
 localStorage.setItem("neurobin-uedit-"+inputdialogfieldes[i].id,inputdialogfieldes[i].value);}
 
@@ -135,18 +150,25 @@ localStorage.setItem("neurobin-uedit-"+inputdialogfieldes[i].id,inputdialogfield
 
 
 function fillStorageFromToolBar1InputFields(){
-    var toolBar1inputfields=document.getElementById('toolBar1').getElementsByTagName('input');
+    var toolBar1inputfields=document.getElementsByName('toolBar1-input-field');
 
     for (var i=0;i<toolBar1inputfields.length;i++) {
 localStorage.setItem("neurobin-uedit-"+toolBar1inputfields[i].id,toolBar1inputfields[i].value);}
 
 }
 
-function filStorageWithMainContent(){
+function fillStorageWithMainContent(){
 fillStorageById("editor-main-content",editor.getSession().getValue());
 }
 function setMainContentFromStorage(){
-	editor.getSession().setValue(getFromStorageById("editor-main-content"));
+	
+
+
+
+editor.getSession().setValue(getFromStorageById("editor-main-content"));
+
+
+
 	
 }
 
@@ -156,12 +178,12 @@ function fillStorage() {
 if (typeof(Storage) != "undefined") {
     // Store
     
-var call1=fillStorageFromInputDialogFields();
-var call1=fillStorageFromToolBar1InputFields();
+fillStorageFromInputDialogFields();
+fillStorageFromToolBar1InputFields();
 
 
 localStorage.setItem('neurobin-uedit-json',json);
-filStorageWithMainContent();
+fillStorageWithMainContent();
     // Retrieve
     //document.getElementById("result").innerHTML = localStorage.getItem("lastname");
 } else {
@@ -193,13 +215,13 @@ filStorageWithMainContent();
 
 
 
-function getSelectedText(){var text="";
+/*function getSelectedText(){var text="";
 if (window.getSelection) {text=window.getSelection();}
 else{text=document.selection.createRange().text;}
 return text;
-}
+}*/
 
-function getSelectionHtml() {
+/*function getSelectionHtml() {
     var html = "";
     if (typeof window.getSelection != "undefined") {
         var sel = window.getSelection();
@@ -216,10 +238,10 @@ function getSelectionHtml() {
         }
     }
     return html;
-}
+}*/
 
 
-function replaceSelectedText(replacementText) {
+/*function replaceSelectedText(replacementText) {
     var sel, range;
     if (window.getSelection) {
         sel = window.getSelection();
@@ -232,7 +254,7 @@ function replaceSelectedText(replacementText) {
         range = document.selection.createRange();
         range.text = replacementText;
     }
-}
+}*/
 
 
 
@@ -303,8 +325,10 @@ function createButtonFromAnyJSON(jsonstring,parentId,lang,classname){
     for(var i=0;i<array.length;i++){
     var element = document.createElement("BUTTON");
     var brElement = document.createElement("BR");
-    var startInput = document.createElement("input");
-    var endInput = document.createElement("input");
+    var type="input";
+    if (array[i].type=="textarea") {type="textarea";}
+    var startInput = document.createElement(type);
+    var endInput = document.createElement(type);
     //Assign different attributes to the element. 
     element.innerHTML=array[i].innerhtml;
     if(array[i].id==""||array[i].id==null){
@@ -320,25 +344,42 @@ function createButtonFromAnyJSON(jsonstring,parentId,lang,classname){
     element.onclick=function(){wrapSelectedText("html","editor-container",this.id);};
 //create input fields
 startInput.value=array[i].start;
-startInput.type="text";
+if(array[i].type!="textarea"){startInput.type="text";}
 startInput.id=element.id+"-start";
 startInput.placeholder="start";
-startInput.title="This string will be inserted at the start of selection";
+startInput.title="This will be inserted at the start of selection";
+if(array[i].type="textarea"){startInput.style.resize="none";}
+startInput.name="toolBar1-input-field";
     
 endInput.value=array[i].end;
-endInput.type="text";
+if(array[i].type!="textarea"){endInput.type="text";}
 endInput.id=element.id+"-end";
 endInput.placeholder="end";
-endInput.title="This string will be inserted at the end of selection";
-    
+endInput.title="This will be inserted at the end of selection";
+if(array[i].type="textarea"){endInput.style.resize="none";}
+endInput.name="toolBar1-input-field";
     
     
     var foo = document.getElementById(parentId);
-    //Append the element in page (in span).  
-    foo.appendChild(element);
-    foo.appendChild(startInput);
-    foo.appendChild(endInput);
-    foo.appendChild(brElement);
+    //Append the element in page (in span).
+var tr=document.createElement("tr");  
+var td1=document.createElement("td");
+var td2=document.createElement("td");
+var td3=document.createElement("td");
+td1.style.width="30%";
+td2.style.width="35%";
+td2.style.width="35%";
+td2.style.overflow="none";
+td3.style.overflow="none";
+td1.appendChild(element);
+td2.appendChild(startInput);
+td3.appendChild(endInput);
+tr.appendChild(td1);
+tr.appendChild(td2);
+tr.appendChild(td3);
+    
+    
+    foo.appendChild(tr);
 }
 
 }
@@ -353,9 +394,9 @@ var fun=getFromStorage();
 }
 
 
-function createNewButton(parentId,lang,start,end,title,classname,innerhtml,position){
+function createNewButton(parentId,lang,start,end,title,classname,innerhtml,type,position){
 
-insertIntoJSON(lang,start,end,title,classname,innerhtml,position);
+insertIntoJSON(lang,start,end,title,classname,innerhtml,type,position);
 
 document.getElementById(parentId).innerHTML="";
 createButtonFromJSON(parentId,lang,classname);
@@ -366,7 +407,7 @@ createButtonFromJSON(parentId,lang,classname);
 }
 
 function validateForm(formId,parentId){
-var inputfields=document.getElementById(formId).getElementsByTagName("input");
+var inputfields=document.getElementsByName("input-dialog-input-field");
 for(var i=0;i<inputfields.length;i++){
 if (inputfields[i].checkValidity()==false) {
 alert("Error: "+inputfields[i].title+" correctly");
@@ -388,10 +429,12 @@ var end=document.getElementById(formId+"-end").value;
 var title=document.getElementById(formId+"-title").value;
 var classname=document.getElementById(formId+"-class").value;
 var innerhtml=document.getElementById(formId+"-innerhtml").value;
+var type=document.getElementById(formId+"-type").value;
 var position=document.getElementById(formId+"-position").value;
 
+if (type!="textarea") {type="input";}
 
- createNewButton(parentId,lang,start,end,title,classname,innerhtml,position);
+ createNewButton(parentId,lang,start,end,title,classname,innerhtml,type,position);
  
 
 
@@ -399,7 +442,7 @@ var position=document.getElementById(formId+"-position").value;
 
 function itemGone(itemId){
 document.getElementById(itemId).style.transitionDuration="1s";
-document.getElementById(itemId).style.right="-40%";
+document.getElementById(itemId).style.right="-100%";
 }
 
 
@@ -409,7 +452,7 @@ document.getElementById(formId).style.right="0";
 }
 
 
-function insertIntoJSON(lang,start,end,title,classname,innerhtml,position){
+function insertIntoJSON(lang,start,end,title,classname,innerhtml,type,position){
 
 json=getJSONString();
 var obj=JSON.parse(json);
@@ -419,13 +462,14 @@ var result = position.match(patt);
 if (position<0) {position=0;}
 else if (result==null||result==""||position>array.length) {position=array.length;}
 
-newarrayitem={"id":"","start":"","end":"","title":"","class":"editor-button","innerhtml":"" };
+var newarrayitem={"id":"","start":"","end":"","title":"","class":"editor-button","innerhtml":"","type":"" };
 newarrayitem.id=lang+"-btn"+array.length;
 newarrayitem.start=start;
 newarrayitem.end=end;
 newarrayitem.title=title;
 newarrayitem.class=classname;
 newarrayitem.innerhtml=innerhtml;
+newarrayitem.type=type;
 //array.splice(position,0,newarrayitem);
 //array.push(newarrayitem);
 array.splice(position,0,newarrayitem);
@@ -505,5 +549,9 @@ var call1=closeModalDialog();
 	
 
 }
+function autoSaveMainContent(){
+	fillStorageWithMainContent();
+	setTimeout(autoSaveMainContent,autoSaveTimeout);
 
+}
 

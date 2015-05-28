@@ -109,8 +109,10 @@
 	
 
 <script>
+initAceEditor();
 createButtonFromJSON('toolBar1',"html","editor-buttons");
-var fun=getFromStorage();
+getFromStorage();
+setMainContentFromStorage();
 
 </script>
 	</body>
