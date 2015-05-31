@@ -12,6 +12,7 @@
 		<script src="uedit/scripts/src-noconflict/mode-php.js"></script>
 		<script src="uedit/scripts/src-noconflict/ext-spellcheck.js"></script>
 		<script src="uedit/scripts/uedit.js" type="text/javascript"></script>
+		<script src="uedit/scripts/FileSaver.min.js" type="text/javascript"></script>
 		<meta name="description" content="Universal Text Editor">
 		<meta name="keywords" content="neurobin,text,editor,uedit" />
 		<title>Uedit @ Neurobin</title>
@@ -36,6 +37,27 @@
 		<button name="Yes" value="right" id="openModal-btn-right" onclick="processModalDialgButtonEvent(this.id)"></button>
 		</div>
 </div>
+
+
+<nav id="context-menu">
+  <ul class="context-menu-items">
+    <li class="context-menu-btn-item">
+      <a name="edit" class="context-menu-link disabled-link">
+        <i class="fa fa-edit"></i> Edit
+      </a>
+    </li>
+    <li class="context-menu-btn-item">
+      <a name="delete" class="context-menu-link">
+        <i class="fa fa-minus"></i> Delete
+      </a>
+    </li>
+    <li class="context-menu-btn-item">
+      <a name="show-info" class="context-menu-link disabled-link">
+        <i class="fa fa-suitcase"></i> Show Info
+      </a>
+    </li>
+  </ul>
+</nav>
 		
 		
 		
@@ -55,7 +77,7 @@
 <input name="input-dialog-input-field" type="text" id="uedit-add-button-dialog-class" placeholder="Class" value="" title="Put the class name">
 <br>
 <input name="input-dialog-input-field" type="text" id="uedit-add-button-dialog-innerhtml" placeholder="Button name" value="" title="Put the button name" required="true">
-<span class="required-flag"> *</span>
+<span class="glyphicon glyphicon-asterisk required-flag"></span>
 <br>
 <select name="input-dialog-input-field" id="uedit-add-button-dialog-type" title="Type of input box">
     <option value="input">Text Field</option>
@@ -125,6 +147,17 @@
 			</div>
 	
 
+
+
+
+
+
+
+
+
+
+
+
 <script>
 initAceEditor();
 createButtonFromJSON('toolBar1',"html","editor-buttons");
@@ -133,5 +166,7 @@ setMainContentFromStorage();
 autoSaveMainContent();
 
 </script>
+
+
 	</body>
 </html>

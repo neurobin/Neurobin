@@ -1137,3 +1137,42 @@ kbd{
 #save-as-path-input-field,#uedit-save-as-button{
   height: 2em!important;
 }
+#context-menu{
+  display: none;
+  padding: 0 0 0 0;
+  position: absolute;
+  z-index: 9999;
+	padding: 1em 2em 1em 0;
+	border-radius: 10px;
+	background: #ddd;
+	background: -moz-linear-gradient(#fff, #ddd);
+	background: -webkit-linear-gradient(#fff, #ddd);
+	background: -o-linear-gradient(#fff, #ddd);
+  background: linear-gradient(#fff, #ddd);
+  text-align: left;
+  overflow: auto;
+  
+}
+#context-menu ul{
+  width: 100%;
+  list-style: none;
+  
+}
+#context-menu li{
+  width: 100%;
+  text-align: left;
+  display: block;
+}
+#context-menu a{
+  width: 100%;
+display: block!important;;
+  outline: none!important;;
+  text-decoration: none;
+  cursor: pointer;
+  padding: 2px 1em 2px .5em;
+  color: black;
+}
+#context-menu a:hover{
+  background-color: darkgrey;
+  border-radius: 2px;
+}

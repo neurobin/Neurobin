@@ -7,6 +7,7 @@ sLnk="";
 localStoragePrefix="neurobin-uedit-";
 projectName="uedit";
 autoSaveTimeout=5000;
+contextMenu="context-menu";
 
 var jsonDefault = '{"html":[' +
 '{"id":"","start":"","end":"","title":"Define it manually","class":"editor-button","innerhtml":"General","type":"textarea"  },' +
@@ -122,13 +123,17 @@ getToolBar1InputFields();
 
 json=getJSONString();
 
-
+document.getElementById('save-as-path-input-field').value=localStorage.getItem('neurobin-uedit-save-as-filename');
 
 }
-
+//////////////////////////////Document is loaded inside the below statement
 document.addEventListener('DOMContentLoaded', function () {
 var fun=getFromStorage();
 var fun1=setMainContentFromStorage();
+document.body.onclick=function(){
+hideContextMenu();
+
+};
 $("body").css("overflow", "hidden");
     }, false);
     
@@ -190,6 +195,7 @@ fillStorageWithMainContent();
     alert("Warning: Local Storage isn't supported..");
 }
 
+localStorage.setItem('neurobin-uedit-save-as-filename',document.getElementById('save-as-path-input-field').value);
 
 
 }
@@ -342,23 +348,40 @@ function createButtonFromAnyJSON(jsonstring,parentId,lang,classname){
     element.class=array[i].class+" "+classname;
     //alert('fds');
     element.onclick=function(){wrapSelectedText("html","editor-container",this.id);};
+    /////show context menu on right click
+    if (element.addEventListener) {
+        element.addEventListener('contextmenu', function(e) {
+            showContextMenu(this);
+            e.preventDefault();
+        }, false);
+    } else {
+        element.attachEvent('oncontextmenu', function() {
+           showContextMenu(this);
+            window.event.returnValue = false;
+        });
+    }
+    
+    
+    
 //create input fields
 startInput.value=array[i].start;
 if(array[i].type!="textarea"){startInput.type="text";}
 startInput.id=element.id+"-start";
 startInput.placeholder="start";
-startInput.title="This will be inserted at the start of selection";
 if(array[i].type="textarea"){startInput.style.resize="none";}
 startInput.name="toolBar1-input-field";
-    
+//if(type!="textarea"){startInput.style.overflowY="none";}
+startInput.onmouseover=function(){setTitleAsValueOfThisElement(this,"This will be inserted at the start of selection");}
+
+
 endInput.value=array[i].end;
 if(array[i].type!="textarea"){endInput.type="text";}
 endInput.id=element.id+"-end";
 endInput.placeholder="end";
-endInput.title="This will be inserted at the end of selection";
 if(array[i].type="textarea"){endInput.style.resize="none";}
 endInput.name="toolBar1-input-field";
-    
+//if(type!="textarea"){endInput.style.overflowY="none";}
+endInput.onmouseover=function(){setTitleAsValueOfThisElement(this,"This will be inserted at the end of selection");}
     
     var foo = document.getElementById(parentId);
     //Append the element in page (in span).
@@ -505,7 +528,7 @@ function resetButtonsToDefault(parentId,lang,classname){
         
     }	*/
 	
-var call1=openModalDialog("Attention!!","Are you sure you want to delete all custom buttons?");
+var call1=openModalDialog("Attention!!","Are you sure you want to delete all button customizaion?");
 
 
 }
@@ -555,3 +578,107 @@ function autoSaveMainContent(){
 
 }
 
+function setTitleAsValueOfThisElement(id,defaultTitle) {
+if(id.value!=""&&id.value!=null){id.title=id.value;}else{id.title=defaultTitle;}
+}
+
+function showContextMenu(id){
+	
+var pos=getPosition(id);
+var body = document.body,html = document.documentElement;
+
+var height = Math.max( body.scrollHeight, body.offsetHeight,html.clientHeight, html.scrollHeight, html.offsetHeight );
+
+    ctxm=document.getElementById(contextMenu); 
+    ctxm.style.left=pos.x+"px";
+    ctxm.style.top=pos.y+"px";
+    ctxm.style.display="block";
+if(pos.y>height-ctxm.scrollHeight){pos.y=pos.y-(pos.y-height+ctxm.scrollHeight)-5;}
+ctxm.style.top=pos.y+"px";
+ctxmItems=ctxm.getElementsByTagName("a");
+for(var i=0;i<ctxmItems.length;i++){
+ctxmItems[i].onclick=function(){
+processInputFromContextMenu(id,this.name);
+}}
+
+}
+
+
+
+function hideContextMenu(){
+    document.getElementById(contextMenu).style.display="none";
+}
+
+
+
+/*function getPosition(e) {
+  var posx = 0;
+  var posy = 0;
+ 
+ if(!e){ var e = window.event;}
+ 
+  if (e.pageX || e.pageY) {
+    posx = e.pageX;
+    posy = e.pageY;
+  } else if (e.clientX || e.clientY) {
+    posx = e.clientX + document.body.scrollLeft +
+                       document.documentElement.scrollLeft;
+    posy = e.clientY + document.body.scrollTop +
+                       document.documentElement.scrollTop;
+  }
+ 
+  return {
+    x: posx,
+    y: posy
+  }
+}*/
+
+function getPosition(element) {
+    var xPosition = 0;
+    var yPosition = 0;
+      
+    while (element) {
+        xPosition += (element.offsetLeft - element.scrollLeft + element.clientLeft);
+        yPosition += (element.offsetTop - element.scrollTop + element.clientTop);
+        element = element.offsetParent;
+    }
+    return { x: xPosition, y: yPosition };
+}
+
+function processInputFromContextMenu(id,itemName){
+
+if (itemName=="delete") {
+deleteButtonFromArray("toolBar1","html",[id.id]);
+
+
+}
+
+
+}
+
+
+function deleteButtonFromArray(parentId,lang,idarr){
+json=getJSONString();
+var obj=JSON.parse(json);
+array=obj.html;
+for (var j=0;j<idarr.length;j++) {
+for (var i=0;i<array.length;i++) {
+	if (array[i].id==idarr[j]) {array.splice(i,1);}
+
+}}
+
+json=JSON.stringify(obj);
+localStorage.setItem('neurobin-uedit-json',json);
+document.getElementById(parentId).innerHTML="";
+createButtonFromJSON(parentId,lang,"editor-button");
+
+}
+
+
+function saveAsUeditMainContent(){
+	var filename=document.getElementById("save-as-path-input-field").value;
+	if(filename==""||filename==null){filename="uedited-file";}
+var blob = new Blob([editor.session.getValue()], {type: "text/plain;charset=utf-8"});
+saveAs(blob, filename);
+
+}
