@@ -19,7 +19,7 @@
 					<a class="dropdown-toggle disabled" data-toggle="dropdown" href="Projects">Projects<span class="caret-down"></span></a>
 					<ul class="dropdown-menu">
 						<li>
-							<a class="menu-item " href="Projects/Softwares">Softwares<span class="caret-right"></a>
+							<a class="menu-item " href="Projects/Softwares">Softwares<span class="caret-right"></span></a>
 
 							<ul >
 								<li>
@@ -33,8 +33,12 @@
 									<a class="menu-item" href="Projects/Softwares/andapps.php">Android</a>
 								</li>
 								<li>
+									<a class="menu-item" href="Projects/Softwares/webapps.php">Web Apps</a>
+								</li>
+								<li>
 									<a class="menu-item" href="Projects/Softwares/games.php">Games</a>
 								</li>
+								
 								<li>
 									<a class="menu-item disabled-link" href="Projects/Softwares/genericsofts.php">Others</a>
 								</li>

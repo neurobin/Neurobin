@@ -1,29 +1,27 @@
 <!DOCTYPE html>
 <html lang="en">
 	<head>
-
 		<base href="../../"/>
 		<?php chdir("../../"); ?>
 		<?php
 		require_once 'head.php';
 		?>
-		<meta http-equiv="content-type" content="text/html; charset=utf-8">
-		<meta name="description" content="Softwares by Neurobin">
-		<meta name="keywords" content="neurobin, projects" />
 
-		<title>Softwares@Neurobin</title>
+		<meta name="description" content="Web Applications">
+		<meta name="keywords" content="neurobin, web, apps, web apps" />
+		<title>Web Apps @ Neurobin</title>
 
 	</head>
 	<body onload="startTime()">
 
 		<?php
-		require_once 'header.php';
+		require_once ('header.php');
 		?>
 
 		<!--Navigation bar ends here -->
 		<!-- fixed share button-->
 		<?php
-			require_once ('fixedsharebutton.php');
+		require_once ('fixedsharebutton.php');
 		?>
 		<!-- fixed share button end-->
 		<div class="container" id="showoff-lin">
@@ -31,8 +29,7 @@
 				<div class="col-xs-12">
 
 					<div id="container" class="line-after">
-						<p>
-							Softwares
+						<p><img alt="linux logo" src="img/web.jpeg" />Web<sup>Apps</sup>
 						</p>
 					</div>
 
@@ -46,20 +43,12 @@
 
 			<div class="row">
 				<div class="col-xs-2" id="content-left"></div>
-				<div class="col-xs-8" id="content-tutorial">
+				<div class="col-xs-8" id="content-lin">
 					<ul>
 						<li>
-							<a href="Projects/Softwares/linsofts.php">GNU/Linux</a>
+							<a href="uedit">Universal Text Editor</a>
 						</li>
-						<li>
-							<a href="Projects/Softwares/winsofts.php">Windows</a>
-						</li>
-						<li>
-							<a href="Projects/Softwares/andapps.php">Android</a>
-						</li>
-						<li>
-							<a href="Projects/Softwares/webapps.php">Web Apps</a>
-						</li>
+
 					</ul>
 				</div>
 				<div class="col-xs-2" id="content-right"></div>
@@ -68,7 +57,6 @@
 		</div>
 
 		<!--Content  ends here -->
-
 		<?php
 		require_once ('footer.php');
 		?>

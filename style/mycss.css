@@ -1199,3 +1199,16 @@ button.unavailable{
 .warningcolor{
   color: darkred!important;
 }
+table{
+  border-collapse: collapse;
+border-spacing: 0px;
+  word-break: keep-all;
+}
+
+table td,table th{
+ padding: 6px 13px;
+border: 1px solid #DDD;
+}
+* {
+    box-sizing: border-box;
+}
