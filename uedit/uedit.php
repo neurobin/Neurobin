@@ -13,6 +13,8 @@
 		<script src="uedit/scripts/src-noconflict/ext-spellcheck.js"></script>
 		<script src="uedit/scripts/uedit.js" type="text/javascript"></script>
 		<script src="uedit/scripts/FileSaver.min.js" type="text/javascript"></script>
+		<script type="text/javascript" src="uedit/scripts/swfobject.js"></script>
+		<script type="text/javascript" src="uedit/scripts/downloadify.min.js"></script>
 		<meta name="description" content="Universal Text Editor">
 		<meta name="keywords" content="neurobin,text,editor,uedit" />
 		<title>Uedit @ Neurobin</title>
@@ -106,17 +108,24 @@
 <button id="add-button" title="Add new button" class="options-button" onclick="showInputDialog('uedit-add-button-dialog')"></button>
 <button id="uedit-delete-button" title="Delete button/s" class="options-button unavailable" onclick="showButtonDeleteDialog('uedit-delete-button-dialog')"></button>
 <button id="reset-toolBar1-button" title="Reset To Default" class="options-button" onclick="resetButtonsToDefault('toolBar1','html','editor-buttons')"></button>
+<button id="uedit-info-button" title="Show Help/Info Menu" class="options-button" onclick="showUeditInfo()"></button>
 <br>
 <table id="uedit-save-as-table">
 <tr>
 <td id="uedit-save-as-table-tr1-td1" style="width:40%;">
-<button id="uedit-save-as-button" class="options-button" onclick="saveAsUeditMainContent()">Save</button>
+<span id="uedit-save-as-button" class="options-button">
+<object style="visibility: visible;" data="media/downloadify.swf" name="downloadify_1433158930117" id="downloadify_1433158930117" type="application/x-shockwave-flash" height="30" width="100">
+<param value="always" name="allowScriptAccess">
+<param value="transparent" name="wmode">
+<param value="queue_name=downloadify_1433158930117&amp;width=100&amp;height=100&amp;downloadImage=uedit/images/download.png" name="flashvars">
+</span>
 </td>
 <td id="uedit-save-as-table-tr1-td2" style="width:60%;">
 <textarea id="save-as-path-input-field" style="resize:none;" placeholder="File Name"></textarea>
 </td>
 </tr>
 </table>
+
 </div>
 </div>
 <div class="row">
@@ -159,14 +168,16 @@
 
 
 <script>
-initAceEditor();
+editor=initAceEditor();
 createButtonFromJSON('toolBar1',"html","editor-buttons");
 getFromStorage();
 setMainContentFromStorage();
+editor.getSession().on('change', function(e) {
 autoSaveMainContent();
-
+}); 
+initDownloadify();
+addCustomKeyBindingsForAce();
 </script>
-
 
 	</body>
 </html>
