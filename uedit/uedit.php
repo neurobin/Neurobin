@@ -47,7 +47,7 @@
       </a>
     </li>
     <li class="context-menu-btn-item">
-      <a name="delete" class="context-menu-link">
+      <a name="delete" class="context-menu-link warningcolor">
         <i class="fa fa-minus"></i> Delete
       </a>
     </li>
@@ -102,9 +102,9 @@
 <div class="col-xs-3" >
 <div class="row">
 <div class="col-xs-12" id="settings-bar">
-<button id="uedit-settings" title="Settings" class="options-button"></button>
+<button id="uedit-settings" title="Settings" class="options-button unavailable"></button>
 <button id="add-button" title="Add new button" class="options-button" onclick="showInputDialog('uedit-add-button-dialog')"></button>
-<button id="uedit-delete-button" title="Delete button/s" class="options-button" onclick="showButtonDeleteDialog('uedit-delete-button-dialog')"></button>
+<button id="uedit-delete-button" title="Delete button/s" class="options-button unavailable" onclick="showButtonDeleteDialog('uedit-delete-button-dialog')"></button>
 <button id="reset-toolBar1-button" title="Reset To Default" class="options-button" onclick="resetButtonsToDefault('toolBar1','html','editor-buttons')"></button>
 <br>
 <table id="uedit-save-as-table">
@@ -113,7 +113,7 @@
 <button id="uedit-save-as-button" class="options-button" onclick="saveAsUeditMainContent()">Save</button>
 </td>
 <td id="uedit-save-as-table-tr1-td2" style="width:60%;">
-<textarea id="save-as-path-input-field" style="resize:none;"></textarea>
+<textarea id="save-as-path-input-field" style="resize:none;" placeholder="File Name"></textarea>
 </td>
 </tr>
 </table>

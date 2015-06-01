@@ -528,7 +528,7 @@ function resetButtonsToDefault(parentId,lang,classname){
         
     }	*/
 	
-var call1=openModalDialog("Attention!!","Are you sure you want to delete all button customizaion?");
+var call1=openModalDialog("Attention!!","Are you sure you want to delete all button customizaion and reset to default ?");
 
 
 }

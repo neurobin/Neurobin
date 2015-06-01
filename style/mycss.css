@@ -1176,3 +1176,10 @@ display: block!important;;
   background-color: darkgrey;
   border-radius: 2px;
 }
+button.unavailable{
+  opacity: .3;
+  pointer-events: none;
+}
+.warningcolor{
+  color: darkred!important;
+}
