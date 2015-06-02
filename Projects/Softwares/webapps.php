@@ -29,7 +29,7 @@
 				<div class="col-xs-12">
 
 					<div id="container" class="line-after">
-						<p><img alt="linux logo" src="img/web.jpeg" />Web<sup>Apps</sup>
+						<p><img alt="logo" src="img/web.jpeg" />Web<sup>Apps</sup>
 						</p>
 					</div>
 

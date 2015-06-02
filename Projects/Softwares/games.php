@@ -31,7 +31,7 @@
 				<div class="col-xs-12">
 
 					<div id="container" class="line-after">
-						<p><img alt="windows logo" src="img/games.jpeg" />Games
+						<p><img alt="logo" src="img/games.jpeg" />Games
 						</p>
 					</div>
 

@@ -31,7 +31,7 @@
 				<div class="col-xs-12">
 
 					<div id="container" class="line-after">
-						<p><img alt="android logo" src="img/and.png" />Android<sup>Apps</sup>
+						<p><img alt="logo" src="img/and.png" />Android<sup>Apps</sup>
 						</p>
 					</div>
 				</div>

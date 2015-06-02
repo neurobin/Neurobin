@@ -9,7 +9,7 @@
 
 		<meta name="description" content="Softwares for Linux">
 		<meta name="keywords" content="linux, softwares, shell, softs, software, soft" />
-		<title>Linux Softwares@Neurobin</title>
+		<title>Linux Softwares @ Neurobin</title>
 
 	</head>
 	<body onload="startTime()">
@@ -29,7 +29,7 @@
 				<div class="col-xs-12">
 
 					<div id="container" class="line-after">
-						<p><img alt="linux logo" src="img/linux.jpeg" />Linux<sup>Softwares</sup>
+						<p><img alt="logo" src="img/linux.jpeg" />Linux<sup>Softwares</sup>
 						</p>
 					</div>
 

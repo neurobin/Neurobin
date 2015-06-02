@@ -11,7 +11,7 @@
 		<meta name="description" content="Softwares for windows">
 		<meta name="keywords" content="windows, softwares, softs, software, soft, microsoft" />
 
-		<title>Windows Softwares@Neurobin</title>
+		<title>Windows Softwares @ Neurobin</title>
 
 	</head>
 	<body onload="startTime()">
@@ -31,7 +31,7 @@
 				<div class="col-xs-12">
 
 					<div id="container" class="line-after">
-						<p><img alt="windows logo" src="img/windows.jpeg" />Windows<sup>Softwares</sup>
+						<p><img alt="logo" src="img/windows.jpeg" />Windows<sup>Softwares</sup>
 						</p>
 					</div>
 
