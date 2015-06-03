@@ -120,3 +120,39 @@
 | --- | Ctrl-L | Center selection |
 
 
+<div id="btn-valid-markups"></div>
+#Valid Markups In Custom Buttons:
+
+| Markup                         | Interpretation                 |
+|:-------------------------------|:-------------------------------|
+| `<span></span>` | <span>Span</span> |
+| `<kbd></kbd>` | <kbd>Keyboard key</kbd> |
+| `<var></var>` | <var>Variable</var> |
+| `s` | <s>Deleted text</s> |
+| `del` | <del>Deleted text</del> |
+| `q` | <q>Short quotation</q> |
+| `b` | <b>Bold text</b> |
+| `i` | <i>Italic text</i> |
+| `u` | <u>Underlined text</u> |
+| `code` | <code>Code</code> |
+| `em` | <em>Emphasis</em> | 
+| `small` | <small>Small text</small> |
+| `sub` | <sub>Subscript</sub> |
+| `sup` | <sup>Superscript</sup> |
+| `mark` | <mark>Mark</mark> |
+
+
+##Rules To use Markups in Custom Button Name:
+
+The only rule is to not use any spaces among `<` and `tagname` or `<` and `/` or `/tagname` and `>` or `/` and `tagname`.
+
+Example:
+
+<ol>
+<li><code>&lt; span&gt;name&lt;/span&gt;</code> is wrong, space between &lt; and span </li>
+<li><code>&lt;span&gt;name&lt; /span&gt;</code> is wrong, space between &lt; and /span</li>
+<li><code>&lt;span&gt;name&lt;/ span&gt;</code> is wrong, space between / and span</li>
+<li><code>&lt;span&gt;name&lt;/span &gt;</code> is wrong, space between /span and &gt;</li>
+<li><code>&lt;span &gt;name&lt;/span&gt;</code> is right</li>
+<li><code>&lt; span class="classname"&gt;name&lt;/span&gt;</code> is right</li>
+</ol>

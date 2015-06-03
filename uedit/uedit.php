@@ -39,6 +39,14 @@
 		<button name="Yes" value="right" id="openModal-btn-right" onclick="processModalDialgButtonEvent(this.id)"></button>
 		</div>
 </div>
+<div id="messageDialog" class="modalDialog">
+	<div>
+		<a onclick="closeMessageDialog()" title="Close" class="close">X</a>
+		<h2></h2>
+		<p></p>
+		<button name="Ok" value="ok" id="messageDialog-btn-ok" onclick="closeMessageDialog()"></button>
+		</div>
+</div>
 
 
 <nav id="context-menu">
@@ -108,7 +116,7 @@
 <button id="add-button" title="Add new button" class="options-button" onclick="showInputDialog('uedit-add-button-dialog')"></button>
 <button id="uedit-delete-button" title="Delete button/s" class="options-button unavailable" onclick="showButtonDeleteDialog('uedit-delete-button-dialog')"></button>
 <button id="reset-toolBar1-button" title="Reset To Default" class="options-button" onclick="resetButtonsToDefault('toolBar1','html','editor-buttons')"></button>
-<button id="uedit-info-button" title="Show Help/Info Menu" class="options-button" onclick="showUeditInfo()"></button>
+<button id="uedit-info-button" title="Show Help/Info Menu" class="options-button" onclick="showUeditInfo('')"></button>
 <br>
 <table id="uedit-save-as-table">
 <tr>
@@ -173,10 +181,26 @@ createButtonFromJSON('toolBar1',"html","editor-buttons");
 getFromStorage();
 setMainContentFromStorage();
 editor.getSession().on('change', function(e) {
-autoSaveMainContent();
-}); 
+fillStorageWithMainContent();
+console.log("Main content saved");
+});
+var filename=document.getElementById("save-as-path-input-field");
+if (filename.addEventListener) {
+  filename.addEventListener('input', function() {
+    fillStorage();
+    console.log("fillStorage successful, stored in local storage");
+  }, false);
+} else if (filename.attachEvent) {
+  filename.attachEvent('onpropertychange', function() {
+    // IE-specific event handling code
+    fillStorage();
+    console.log("fillStorage successful, stored in local storage");
+  });
+}
 initDownloadify();
 addCustomKeyBindingsForAce();
+
+
 </script>
 
 	</body>
