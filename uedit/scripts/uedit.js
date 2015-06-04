@@ -131,7 +131,8 @@ document.body.onclick=function(){
 hideContextMenu();
 
 };
-$("body").css("overflow", "hidden");
+//$("body").css("overflow", "hidden");
+document.body.style.overflow="hidden";
     }, false);
     
 function fillStorageById(id,value){
@@ -159,6 +160,17 @@ localStorage.setItem("neurobin-uedit-"+toolBar1inputfields[i].id,toolBar1inputfi
 
 }
 
+function emptyStorageOfToolBar1InputFields() {
+    var toolBar1inputfields=document.getElementsByName('toolBar1-input-field');
+
+    for (var i=0;i<toolBar1inputfields.length;i++) {
+localStorage.setItem("neurobin-uedit-"+toolBar1inputfields[i].id,"");}
+
+console.log("Local storage of custom buttons were made empty");
+
+}
+
+
 function fillStorageWithMainContent(){
 fillStorageById("editor-main-content",editor.getSession().getValue());
 }
@@ -175,6 +187,8 @@ editor.getSession().setValue(getFromStorageById("editor-main-content"));
 }
 
 
+
+
 function fillStorage() {
 // Check browser support
 if (typeof(Storage) != "undefined") {
@@ -185,6 +199,7 @@ fillStorageFromToolBar1InputFields();
 
 
 localStorage.setItem('neurobin-uedit-json',json);
+
 fillStorageWithMainContent();
     // Retrieve
     //document.getElementById("result").innerHTML = localStorage.getItem("lastname");
@@ -199,65 +214,6 @@ localStorage.setItem('neurobin-uedit-save-as-filename',document.getElementById('
 
 
 
-
-/*function getIFrameDocument(aID){
-  // if contentDocument exists, W3C compliant (Mozilla)
-  if (document.getElementById(aID).contentDocument){
-    return document.getElementById(aID).contentDocument;
-  } else {
-    // IE
-    return document.frames[aID].document;
-  }
-}*/
-
-
-/*function setDesignModeOn(id){
- getIFrameDocument(id).designMode = "On";
-}
-*/
-
-
-
-/*function getSelectedText(){var text="";
-if (window.getSelection) {text=window.getSelection();}
-else{text=document.selection.createRange().text;}
-return text;
-}*/
-
-/*function getSelectionHtml() {
-    var html = "";
-    if (typeof window.getSelection != "undefined") {
-        var sel = window.getSelection();
-        if (sel.rangeCount) {
-            var container = document.createElement("div");
-            for (var i = 0, len = sel.rangeCount; i < len; ++i) {
-                container.appendChild(sel.getRangeAt(i).cloneContents());
-            }
-            html = container.innerHTML;
-        }
-    } else if (typeof document.selection != "undefined") {
-        if (document.selection.type == "Text") {
-            html = document.selection.createRange().htmlText;
-        }
-    }
-    return html;
-}*/
-
-
-/*function replaceSelectedText(replacementText) {
-    var sel, range;
-    if (window.getSelection) {
-        sel = window.getSelection();
-        if (sel.rangeCount) {
-            range = sel.getRangeAt(0);
-            range.deleteContents();
-            range.insertNode(document.createTextNode(replacementText));
-        }
-    } else if (document.selection && document.selection.createRange) {
-        range = document.selection.createRange();
-        range.text = replacementText;
-    }
-}*/
 
 
 
@@ -567,8 +523,9 @@ return json;
 }
 
 function createButtonFromDefaultJSON(parentId,lang,classname){
+emptyStorageOfToolBar1InputFields();
 document.getElementById(parentId).innerHTML="";
-var call1=createButtonFromAnyJSON(jsonDefault,parentId,lang,classname);
+createButtonFromAnyJSON(jsonDefault,parentId,lang,classname);
 fillStorage();
 }
 
@@ -845,5 +802,24 @@ window.open(getInfoURL(id),"Uedit Info","width="+width+", height="+height+", scr
 
 }
 
+function removeFirstRunTag() {
+localStorage.setItem('neurobin-uedit-firstRun',"notNull");
+console.log("First run tag removed");
+}
 
+function checkForFirstRunAndInitializeButtons(parentId,lang,classname){
+	currentParentId=parentId;
+	currentLang=lang;
+	currentClassName=classname;
+	if (localStorage.getItem('neurobin-uedit-firstRun')!="notNull") {
+createButtonFromDefaultJSON(currentParentId,currentLang,currentClassName);
+console.log("This was a frist run for this browser");
+removeFirstRunTag();
+}
+else {
+createButtonFromJSON(currentParentId,currentLang,currentClassName);
+}
+
+
+}
 
