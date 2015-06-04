@@ -60,6 +60,9 @@
 						<li>
 							<a href="Projects/Softwares/webapps.php">Web Apps</a>
 						</li>
+						<li>
+							<a href="Projects/Softwares/games.php">Games</a>
+						</li>
 					</ul>
 				</div>
 				<div class="col-xs-2" id="content-right"></div>
