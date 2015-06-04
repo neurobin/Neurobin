@@ -177,6 +177,7 @@
 
 
 <script>
+checkForLocalStorageSupport();
 editor=initAceEditor();
 checkForFirstRunAndInitializeButtons('toolBar1',"html","editor-buttons");
 getFromStorage();
