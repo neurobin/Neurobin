@@ -1,3 +1,4 @@
+<?php $projectName="JLIVECD"; ?>
 <!DOCTYPE html>
 <html lang="en">
 	<head>
@@ -234,6 +235,8 @@ Is this a fresh start: (y/n)?n
  <span class="quote">timeout_value</span> should be replaced with your desired time in seconds (ex: 12)
 						</li>
 					</ol>
+
+<?php require_once('contribute-message.php'); ?>
 
 					<h2><a href="http://en.wikipedia.org/wiki/JLIVECD">Find On Wiki</a></h2>
 					<h2><a href="https://www.facebook.com/pages/JCode/1513497505602572">Find On Facebook</a></h2>

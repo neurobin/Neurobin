@@ -1,3 +1,5 @@
+<?php $projectName="shc"; ?>
+
 <!DOCTYPE html>
 <html lang="en">
 	<head>
@@ -89,12 +91,8 @@ shc -f test.bash -o test</code></pre>
 						limiting the maximum length of the runnable script of shc.
 						!! - CHECK YOUR RESULTS CAREFULLY BEFORE USING - !!
 					</p>
-					<p>
-						Released at <a href="https://github.com/neurobin/shc/archive/3.9.1.zip">https://github.com/neurobin/shc/archive/3.9.1.zip</a>
-					</p>
-					<p>
-						and <a href="https://github.com/neurobin/shc/archive/3.9.1.tar.gz">https://github.com/neurobin/shc/archive/3.9.1.tar.gz</a>
-					</p>
+					<?php require_once('contribute-message.php'); ?>
+					
 					<h2><a id="authors--" class="anchor" href="#authors--" aria-hidden="true"><span class="octicon octicon-link"></span></a>Authors: </h2>
 					<p>
 						Francisco Rosales Garcia

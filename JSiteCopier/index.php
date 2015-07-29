@@ -1,3 +1,4 @@
+<?php $projectName="JSiteCopier"; ?>
 <!DOCTYPE html>
 <html lang="en">
 	<head>
@@ -99,14 +100,8 @@
 						</li>
 					</ol>
 
-					<h2>Contribute:</h2>
+<?php require_once('contribute-message.php'); ?>
 
-					<p>
-						You can contribute to this project by sharing ideas or suggestions or by starring the repository for spiritual support.
-					</p>
-					<p class="quote">
-						Have any suggestions or see any problems? please open an issue <a href="https://github.com/neurobin/JSiteCopier/issues">here</a>
-					</p>
 				</div>
 				<div class="col-xs-2" id="content-right"></div>
 

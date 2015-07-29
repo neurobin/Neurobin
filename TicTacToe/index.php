@@ -1,3 +1,4 @@
+<?php $projectName="TicTacToe"; ?>
 <!DOCTYPE html>
 <html lang="en">
 	<head>

@@ -1,3 +1,4 @@
+<?php $projectName="MT7630E"; ?>
 <!DOCTYPE html>
 <html lang="en">
 	<head>
@@ -99,10 +100,8 @@ The driver will automatically load at startup.... </p>
 </ol>
 <p>And many more unsung heroes...</p>
 
-					<h2>Contribute:</h2>
-					<p class="quote">
-						Have any suggestions or see any problems? please open an issue <a href="https://github.com/neurobin/php2html/issues">here</a>
-					</p>
+					<?php require_once('contribute-message.php'); ?>
+
 					<p class="light-quote">You can follow this <a href="https://bugs.launchpad.net/ubuntu/+source/linux/+bug/1220146">bug report</a> for more information</p>
 					
 				</div>

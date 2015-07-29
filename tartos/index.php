@@ -1,3 +1,4 @@
+<?php $projectName="tartos"; ?>
 <!DOCTYPE html>
 <html lang="en">
 	<head>
@@ -170,10 +171,7 @@ sudo apt-get install tartos
 						tartos --help
 					</p>
 
-					<h2>Contribute:</h2>
-					<p class="quote">
-						If you have any suggestion or see any problem, please open an issue <a href="https://github.com/neurobin/tartos/issues">here</a>
-					</p>
+<?php require_once('contribute-message.php'); ?>
 				</div>
 				<div class="col-xs-2" id="content-right"></div>
 

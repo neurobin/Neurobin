@@ -1,3 +1,5 @@
+<?php $projectName="gccInstaller"; ?>
+
 <!DOCTYPE html>
 <html lang="en">
 	<head>
@@ -70,14 +72,7 @@
     It will ask for version number, give it. If there is no other file starting with <span class="quote">gcc</span> in that folder then simply hitting enter without giving version number will do too.
 </li>
 </ol>
-					<h2>Contribute:</h2>
-
-					<p>
-						You can contribute to this project by sharing ideas or suggestions or by starring the repository for spiritual support.
-					</p>
-					<p class="quote">
-						Have any suggestions or see any problems? please open an issue <a href="https://github.com/neurobin/JSiteCopier/issues">here</a>
-					</p>
+<?php require_once('contribute-message.php'); ?>
 				</div>
 				<div class="col-xs-2" id="content-right"></div>
 
