@@ -49,6 +49,9 @@
 							<a href="shc">Shell Script Compiler</a>
 						</li>
 						<li>
+							<a href="rnm">rnm (Bulk rename utility for GNU/Linux)</a>
+						</li>
+						<li>
 							<a href="tartos">Tartos (TAR to self extracting shell script)</a>
 						</li>
 						<li>
