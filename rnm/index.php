@@ -59,8 +59,10 @@
 <?php
 include "Parsedown.php";
 $parse=new Parsedown();
-$filename="https://raw.github.com/neurobin/rnm/release/README.md";
+$filename="https://raw.github.com/neurobin/" . $projectName . "/release/README.md";
+$changelog="https://raw.github.com/neurobin/" . $projectName . "/release/changelog";
 echo  $parse->text(file_get_contents($filename));
+echo  $parse->text(file_get_contents($changelog));
 
 ?>	
 

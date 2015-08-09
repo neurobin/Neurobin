@@ -25,12 +25,11 @@
 						<li>
 							<a href="shc">SHC</a>
 						</li>
-						
 						<li>
-							<a href="uedit">Uedit</a>
+							<a href="rnm">rnm</a>
 						</li>
 						<li>
-							<a href="tartos">Tartos</a>
+							<a href="uedit">Uedit</a>
 						</li>
 						<li>
 							<a href="JLIVECD">JLIVECD</a>
