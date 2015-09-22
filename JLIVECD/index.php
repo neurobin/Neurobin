@@ -239,7 +239,7 @@ Is this a fresh start: (y/n)?n
 <?php require_once('contribute-message.php'); ?>
 
 					<h2><a href="http://en.wikipedia.org/wiki/JLIVECD">Find On Wiki</a></h2>
-					<h2><a href="https://www.facebook.com/pages/JCode/1513497505602572">Find On Facebook</a></h2>
+					<?php require_once('social-pages.php'); ?>
 
 					<h2><a id="authors--" class="anchor" href="#authors--" aria-hidden="true"><span class="octicon octicon-link"></span></a>Author: </h2>
 

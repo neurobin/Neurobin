@@ -101,6 +101,7 @@
 					</ol>
 
 <?php require_once('contribute-message.php'); ?>
+<?php require_once('social-pages.php'); ?>
 
 				</div>
 				<div class="col-xs-2" id="content-right"></div>

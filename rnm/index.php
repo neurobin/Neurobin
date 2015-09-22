@@ -7,8 +7,8 @@
 		<?php
 		require_once 'head.php';
 		?>
-		<meta name="description" content="Bulk rename utility for Linux">
-		<meta name="keywords" content="rename,bulk rename,rnm,linux,gnu" />
+		<meta name="description" content="Bulk rename utility">
+		<meta name="keywords" content="rename,bulk rename,rnm,linux,gnu,unix" />
 		<title>rnm @ Neurobin</title>
 
 	</head>
@@ -31,7 +31,7 @@
 					rnm
 				</p>
 				<p class="project-tagline">
-					Bulk rename utility for GNU/Linux
+					Bulk rename utility
 				</p>
 
 			</div>
@@ -45,7 +45,7 @@
 						<a href="https://github.com/neurobin/rnm">View On Github</a>
 						<a href="https://github.com/neurobin/rnm/archive/release.zip">Download .zip</a>
 						<a href="https://github.com/neurobin/rnm/archive/release.tar.gz">Download .tar.gz</a>
-
+                  <a href="rnm/man.html">ManPage</a>
 					</div>
 				</div>
 			</div>
@@ -60,13 +60,15 @@
 include "Parsedown.php";
 $parse=new Parsedown();
 $filename="https://raw.github.com/neurobin/" . $projectName . "/release/README.md";
-$changelog="https://raw.github.com/neurobin/" . $projectName . "/release/changelog";
+$changelog="https://raw.github.com/neurobin/" . $projectName . "/release/ChangeLog";
 echo  $parse->text(file_get_contents($filename));
+echo "<div id=\"changelog\">";
 echo  $parse->text(file_get_contents($changelog));
-
+echo "</div>";
 ?>	
 
 <?php require_once('contribute-message.php'); ?>
+<?php require_once('social-pages.php'); ?>
 				</div>
 				<div class="col-xs-2" id="content-right"></div>
 

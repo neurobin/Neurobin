@@ -75,7 +75,7 @@ It's kinda funny though, if you lose to this AI, it means losing to me.
 </ul>				
 				
 
-
+<?php require_once('social-pages.php'); ?>
 
 				</div>
 				<div class="col-xs-2" id="content-right"></div>

@@ -93,6 +93,7 @@ Note that the version number points to the jdk install directory: <code>/usr/lib
 					
 
 					<?php require_once('contribute-message.php'); ?>
+					<?php require_once('social-pages.php'); ?>
 
 
 				</div>

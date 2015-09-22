@@ -47,7 +47,7 @@
 						<a href="https://github.com/neurobin/shc">View On Github</a>
 						<a href="https://github.com/neurobin/shc/archive/3.9.1.zip">Download .zip</a>
 						<a href="https://github.com/neurobin/shc/archive/3.9.1.tar.gz">Download .tar.gz</a>
-
+                  <a href="shc/man.html">Man Page</a>
 					</div>
 				</div>
 			</div>
@@ -63,12 +63,14 @@
 						specified on the command line and produces C source code. The
 						generated source code is then compiled and linked to produce a stripped binary.
 					</p>
+					<p>The compiled binary will still be dependent on the shell specified in the first line of the shell code (i.e shebang: <code>#!/bin/sh</code> or such), thus <code>shc</code> does not create completely independent binaries.</p>
+					<p><code>shc</code> itself is not a compiler such as <code>cc</code>, it rather encodes and encrypts a shell script and generates C source code with the added expiration capability. It then uses the system compiler to compile a stripped binary which behaves exactly like the original script. Upon execution, the compiled binary will decrypt and execute the code with the shells' <code>-c</code> option.</p>
 					<h2><a id="install" class="anchor" href="#install" aria-hidden="true"><span class="octicon octicon-link"></span></a>Install:</h2>
-					<a class="inline-code">cd</a> to directory "main"... 					<pre><code>cd main
+					<pre><code>./configure
 make
 sudo make install
 </code></pre>
-					or simply run the <a class="inline-code">install</a> script/file provided, in terminal: 					<pre><code>./install</code></pre>
+					or simply run the <a class="inline-code">binary</a> file provided, in <span class="light-quote">bin/x32</span> or <span class="light-quote">bin/x64</span> in terminal 					<pre><code>./shc options</code></pre>
 
  <h3>For Ubuntu</h3>
 					<pre><code>sudo add-apt-repository -y ppa:neurobin/ppa
@@ -106,6 +108,7 @@ shc -f test.bash -o test</code></pre>
 					<p>
 						<a href="http://github.com/neurobin">http://github.com/neurobin</a>
 					</p>
+					<?php require_once('social-pages.php'); ?>
 				</div>
 				<div class="col-xs-2" id="content-right"></div>
 

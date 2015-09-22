@@ -101,9 +101,10 @@ The driver will automatically load at startup.... </p>
 <p>And many more unsung heroes...</p>
 
 					<?php require_once('contribute-message.php'); ?>
+					
 
 					<p class="light-quote">You can follow this <a href="https://bugs.launchpad.net/ubuntu/+source/linux/+bug/1220146">bug report</a> for more information</p>
-					
+					<?php require_once('social-pages.php'); ?>
 				</div>
 				<div class="col-xs-2" id="content-right"></div>
 

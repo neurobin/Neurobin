@@ -63,6 +63,7 @@ $filename="https://raw.github.com/neurobin/php2html/release/README.md";
 echo  $parse->text(file_get_contents($filename));
 
 ?>	
+<?php require_once('social-pages.php'); ?>
 				</div>
 				<div class="col-xs-2" id="content-right"></div>
 
