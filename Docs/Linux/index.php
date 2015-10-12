@@ -1,16 +1,15 @@
 <!DOCTYPE html>
 <html lang="en">
 	<head>
-
-		<base href="../"/>
-		<?php chdir("../"); ?>
+		<base href="../../"/>
+		<?php chdir("../../"); ?>
 		<?php
 		require_once 'head.php';
 		?>
-		<meta name="description" content="Tutorials by Neurobin">
-		<meta name="keywords" content="neurobin, tutorials" />
+		<meta name="description" content="Linux Tutorials by Neurobin">
+		<meta name="keywords" content="linux, tutorials" />
 
-		<title>Tutorials@Neurobin</title>
+		<title>Linux Tutorials@Neurobin</title>
 
 	</head>
 	<body onload="startTime()">
@@ -30,7 +29,7 @@
 				<div class="col-xs-12">
 
 					<div id="container" class="line-after">
-						<p><img alt="linux logo" src="img/tutor.jpg" />Tutorials
+						<p><img alt="linux logo" src="img/linux.jpeg" />Linux<sup>Tutorials</sup>
 						</p>
 					</div>
 
@@ -47,7 +46,7 @@
 				<div class="col-xs-8" id="content-tutorial">
 					<ul>
 						<li>
-							<a href="Tutorials/linuxtutorials.php">GNU/Linux</a>
+							<a href="Docs/Linux/how-to-install-softwares-in-linux.php">Installing Softwares In Linux</a>
 						</li>
 
 					</ul>

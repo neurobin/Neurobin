@@ -54,7 +54,34 @@
 
 		<div class="container" id="content-container2">
 			<div class="row">
-				<div class="col-xs-2" id="content-left"></div>
+				<div class="col-xs-2" id="content-left">
+<style type="text/css">
+@import url(//www.google.com/cse/api/branding.css);
+</style>
+<div class="cse-branding-right" style="background-color:#FFFFFF;color:#000000">
+  <div class="cse-branding-form">
+    <form action="http://www.google.com" id="cse-search-box">
+      <div>
+        <input type="hidden" name="cx" value="partner-pub-7231056961514186:4715037355" />
+        <input type="hidden" name="ie" value="UTF-8" />
+        <input type="text" name="q" size="55" />
+        <input type="submit" name="sa" value="Search" />
+      </div>
+    </form>
+    <script type="text/javascript" src="http://www.google.com/jsapi"></script>
+    <script type="text/javascript">google.load("elements", "1", {packages: "transliteration"});</script>
+    <script type="text/javascript" src="http://www.google.com/cse/t13n?form=cse-search-box&t13n_langs=en"></script>
+  </div>
+  <div class="cse-branding-logo">
+    <img src="http://www.google.com/images/poweredby_transparent/poweredby_FFFFFF.gif" alt="Google" />
+  </div>
+  <div class="cse-branding-text">
+    Custom Search
+  </div>
+</div>
+		
+				
+				</div>
 				<div class="col-xs-8 " id="content-soft">
 					<p>
 						This is an easy installation package of the <a href="http://www.mediatek.com/en/downloads/mt7630-pcie/">Mediatek official driver</a> which is modified by various contributors throughout Github and released under GPL.

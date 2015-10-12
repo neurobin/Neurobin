@@ -10,7 +10,7 @@
 		<meta name="description" content="Installing Softwares On Linux">
 		<meta name="keywords" content="tutorial, on, how, to, install, softwares, linux, app, installing, software" />
 
-		<title>Installing Softwares On Linux</title>
+		<title>Installing Softwares On Linux | Neurobin</title>
 
 	</head>
 	<body onload="startTime()">
@@ -50,34 +50,34 @@
 							</p>
 							<ol>
 								<li>
-									<a href="Tutorials/Linux/t1.php#1">Through a software manager</a>
+									<a href="Docs/Linux/how-to-install-softwares-in-linux.php#1">Through a software manager</a>
 								</li>
 								<li>
-									<a href="Tutorials/Linux/t1.php#2">Through synaptic package manager</a>
+									<a href="Docs/Linux/how-to-install-softwares-in-linux.php#2">Through synaptic package manager</a>
 								</li>
 								<li>
-									<a href="Tutorials/Linux/t1.php#3">Through terminal</a>
+									<a href="Docs/Linux/how-to-install-softwares-in-linux.php#3">Through terminal</a>
 								</li>
 								<li>
-									<a href="Tutorials/Linux/t1.php#4">PPA installation</a>
+									<a href="Docs/Linux/how-to-install-softwares-in-linux.php#4">PPA installation</a>
 								</li>
 								<li>
-									<a href="Tutorials/Linux/t1.php#5">Installing .deb packages</a>
+									<a href="Docs/Linux/how-to-install-softwares-in-linux.php#5">Installing .deb packages</a>
 								</li>
 								<li>
-									<a href="Tutorials/Linux/t1.php#6">Installing .rpm packages</a>
+									<a href="Docs/Linux/how-to-install-softwares-in-linux.php#6">Installing .rpm packages</a>
 								</li>
 								<li>
-									<a href="Tutorials/Linux/t1.php#7">Installing from archives</a>
+									<a href="Docs/Linux/how-to-install-softwares-in-linux.php#7">Installing from archives</a>
 								</li>
 								<li>
-									<a href="Tutorials/Linux/t1.php#8">Pre-installed archives</a>
+									<a href="Docs/Linux/how-to-install-softwares-in-linux.php#8">Pre-installed archives</a>
 								</li>
 								<li>
-									<a href="Tutorials/Linux/t1.php#9">Installing .sh files</a>
+									<a href="Docs/Linux/how-to-install-softwares-in-linux.php#9">Installing .sh files</a>
 								</li>
 								<li>
-									<a href="Tutorials/Linux/t1.php#10">Installing .run files</a>
+									<a href="Docs/Linux/how-to-install-softwares-in-linux.php#10">Installing .run files</a>
 								</li>
 
 							</ol>

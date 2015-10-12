@@ -1,7 +1,7 @@
-<?php
-include "./Parsedown.php";
-$parse=new Parsedown();
-$filename="./README.md";
-echo  $parse->text(file_get_contents($filename));
 
-?>	
+<?php
+require_once('utils.php');
+scanDirAndSetAnchor('Docs/Android');
+
+?>
+
