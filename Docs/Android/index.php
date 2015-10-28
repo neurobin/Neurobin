@@ -9,7 +9,7 @@
 		<meta name="description" content="Neurobin Android Tutorials & Examples">
 		<meta name="keywords" content="android, tutorials" />
 
-		<title>Android Tutorials &amp; Examples | Neurobin</title>
+		<title>Android Tutorials &amp; Examples<?php echo $titletag ?></title>
 
 	</head>
 	<body onload="startTime()">

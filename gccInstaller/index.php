@@ -10,7 +10,7 @@
 		?>
 		<meta name="description" content="Install GCC compiler from source">
 		<meta name="keywords" content="gcc,installer,linux" />
-		<title>GCC Installer@Neurobin</title>
+		<title>GCC Installer<?php echo $titletag ?></title>
 
 	</head>
 	<body onload="startTime()">

@@ -1,8 +1,8 @@
 <!DOCTYPE html>
 <html lang="en">
 	<head>
-		<base href="../../" />
-		<?php chdir("../../"); ?>
+		<base href="../../../" />
+		<?php chdir("../../../"); ?>
 		<?php
 		require_once 'head.php';
 		?>
@@ -10,7 +10,7 @@
 		<meta name="description" content="Installing Softwares On Linux">
 		<meta name="keywords" content="tutorial, on, how, to, install, softwares, linux, app, installing, software" />
 
-		<title>Installing Softwares On Linux | Neurobin</title>
+		<title>Installing Softwares On Linux<?php echo $titletag ?></title>
 
 	</head>
 	<body onload="startTime()">

@@ -9,9 +9,9 @@
 		require_once 'head.php';
 		?>
 		<meta name="description" content="Live CD/DVD customization tool">
-		<meta name="keywords" content="livecd, livedvd, customize, JLIVECD, linux, ubuntu, Linux Mint, ubuntu cd, ubuntu dvd, jlivecd" />
+		<meta name="keywords" content="customize ubuntu live cd/dvd, customize linux mint live cd/dvd, ubuntu live cd/dvd customization, linux mint live cd/dvd customization, live cd/dvd customization" />
 
-		<title>JLIVECD@Neurobin</title>
+		<title>Live CD/DVD customization tool for Ubuntu and it's derivatives<?php echo $titletag ?></title>
 		<link rel="shortcut icon" href="JLIVECD/img/48.png" type="image/x-icon" />
 
 	</head>
@@ -79,7 +79,7 @@ Your changes are always saved. You can resume it whenever you like.
 It remembers your previous choice (the project directory, the desired ISO name and the original ISO path). Just hit <kbd>Enter</kbd> when you are prompt for input in such cases.
 </li>
 <li>You only need to give it the original ISO once, every time after that, you can just go to the chroot terminal and keep customizing things.</li>
-
+<li>It remembers user choices for various options and prompts both globally and locally (project-wise).</li>
 					
 					
 					
@@ -90,6 +90,9 @@ It remembers your previous choice (the project directory, the desired ISO name a
 
 					<h2>Requirements:</h2>
 					<ol>
+					<li>
+bash (This is installed by default in most Linux distros)					
+					</li>
 						<li>
 
 							squashfs-tools
@@ -97,23 +100,28 @@ It remembers your previous choice (the project directory, the desired ISO name a
 						<li>
 							genisoimage
 						</li>
+						<li>xterm (optional)</li>
 					</ol>
 
 					<p>
 						Install requirements:
 					</p>
 					<pre><code>sudo apt-get install squashfs-tools genisoimage</code></pre>
+					<p>Optionally you can keep <code>xterm</code> installed. It will act as a backup terminal if the default terminal fails to run.</p>
+					<pre><code>sudo apt-get install xterm</code></pre>
 					<h2>Installation:</h2>
 
-					Give the <span class="quote">install.sh</span> file execution permission and run it in terminal: 					<pre><code>./install.sh	</code></pre>
+					Give the <span class="quote">install.sh</span> file execution permission and run it in terminal: 
+					<pre><code>chmod +x ./install.sh
+./install.sh     # or you can just drag & drop in terminal</code></pre>
 					<h2>How to use:</h2>
 
 					<p>
-						Run <span class="inline-code">JLstart</span> in a terminal:
+						Run <code>JLstart</code> in a terminal:
 					</p>
 					<pre><code>~$ JLstart
 
-Is this a fresh start: (y/n)?n
+Is this a new project: (y/n)?n
 
 [sudo] password for user:
 
@@ -144,7 +152,7 @@ In your project directory, you will find some default directories. Don't change 
 </li>
 </ol>
 <li>
-There's also an additional file named <span class="quote">disk</span>, which contains the target ISO name. You can edit this file to edit the name. Dont' delete it though.
+There's also an additional file named <span class="quote">.config</span>, which contains configuration of the corresponding project i.e DiskName and some other defaults for various options.
 </li>
 </li>
 
@@ -176,8 +184,38 @@ In a fresh start, don't close the terminal when it is extracting the original IS
 						</li>
 						<li>Don't close the chroot and host terminal simultaneously. You can close the host terminal safely after an input prompt appears after closing the chroot terminal.</li>
 <li>
-The default answer is <span class="quote">no</span> for all <span class="quote">yes/no</span> type questions.
-</li>					
+The default answer is <span class="quote">no</span> for all <span class="quote">yes/no</span> type questions unless specified otherwise.
+</li>		
+<li>
+The default answers for <code>yes/no</code> type questions are changed according to previous choices for some questions (retain home directory? etc..). For example, if you choose <code>y</code> for the question <code>retain home directory (y/n)?</code>; next time if you just hit <kbd>Enter</kbd>, it will take <code>y</code> instead of <code>n</code>. This is project specific i.e each project remembers its own options.
+
+</li>
+			
+					</ol>
+					
+					<h2>Some Tips & Tricks:</h2>
+					<ol>
+					<li>
+					If you are not being able to get connected to internet in chroot, you can try running the code: <code>JLopt -rn</code> in another terminal in your main system. This may happen if you start JLIVECD before connecting your pc to the internet
+					</li>
+					<li>
+					If you want to change the timeout value then run this code in a terminal in your main system:
+					<pre><code>JLopt -t timeout_value</code></pre><span class="quote">timeout_value</span> should be replaced with your desired time in seconds. Ex: for 12 seconds timeout:
+					<pre><code>JLopt -t 12</code></pre>
+					</li>
+					<li>
+JLIVECD seems to have problem running the <code>mate-terminal</code> properly. For mate DE, install <code>xterm</code> instead:
+<pre><code>sudo apt-get install xterm</code></pre> 			
+					</li>
+					<li>
+You can change the default terminal JLIVECD uses for chroot. To change the primary default terminal, run the following command in a terminal in your main system:
+<pre><code>JLopt -t1 actual-terminal-command</code></pre>
+To change the secondary default:
+<pre><code>JLopt -t2 actual-terminal-command</code></pre>
+For Example, adding gnome-terminal as the primary default:
+<pre><code>JLopt -t1 gnome-terminal</code></pre>
+		</li>
+					
 					</ol>
 
 					<h2 id="debcache-management">Special Feature:</h2>
@@ -225,6 +263,50 @@ The default answer is <span class="quote">no</span> for all <span class="quote">
 							You can use full path wih or without <span class="quote">.iso</span>
 						</li>
 					</ol>
+					
+					<span class="quote">version 2.0.5:</span>
+					<ol>
+					<li>
+					New install or update of this tool will not delete the history i.e hitting <kbd>Enter</kbd> to take the previous choice won't be affected. This was first implemented in version 2.0.4, i.e version >=2.0.4 can be safely updated to any later version.
+					</li>
+					<li>
+					Added another compression method (fast compression).
+					</li>
+<li>
+Minor potential bug fixes.
+</li>					
+<li>
+Docs updated.
+</li>
+					
+					</ol>
+					
+					<span class="quote">version 2.0.7:</span>
+					<ol>
+<li>
+<code>xterm</code> is added as a secondary terminal besides the default <code>x-terminal-emulator</code>.
+</li>	
+<li>
+Docs updated.
+</li>
+					
+					
+					
+					</ol>
+					<span class="quote">version 2.1.0</span>
+<ol>
+<li>You can change default terminals without applying patch to the source code.</li>
+<li>It now remembers several project-wise options (delete home directory?, fast compression?, etc..).</li>
+<li>Options are handled with config files both globally and project-wise.</li>
+<li>Added show version info (<code>JLopt -v</code>)</li>
+<li>Added show help menu (<code>JLopt -h</code>)</li>
+<li>New script <code>JLopt</code> contains several useful functionality.</li>
+<li>Several potential bug fixes.</li>
+<li>Docs updated.</li>
+
+
+</ol>					
+					
 
 					<h2>Tested OS:</h2>
 					<ul>
@@ -236,6 +318,12 @@ The default answer is <span class="quote">no</span> for all <span class="quote">
 						</li>
 						<li>
 							Xubuntu 14.04.1 LTS
+						</li>
+						<li>
+							Ubuntu 14.04.1 LTS
+						</li>
+						<li>
+							Ubuntu 14.04.3 LTS
 						</li>
 					</ul>
 
@@ -290,23 +378,19 @@ fi
 <a href="https://bugs.launchpad.net/ubuntu/+source/systemd/+bug/1325142">https://bugs.launchpad.net/ubuntu/+source/systemd/+bug/1325142</a>
 						
 						</li>
-						<li>
-							<p>
-								If you are not able to get connected to internet in chroot then you can try running the code:
-							</p>
-							<pre><code>JLRefreshNetwork</code></pre>
-							<p>
-								in another terminal in your main system. This may happen, if you have started JLIVECD before connecting your pc to the internet.
-							</p>
-						</li>
-						<li>
-							<p>
-								If you want to change the timeout value then run this code in another terminal in your main system:
-							</p>
-							<pre><code>sudo echo <span class="edit">timeout_value</span> > /usr/local/JLIVECD/main/timeout</code></pre>																																										
+<li>
+You may encounter another bug: <span class="quote">Ubiquity installer</span>, hang/freeze on harddisk detection`. This bug can be solved by editing the file <span class="light-quote">edit/usr/share/applications/ubiquity-gtkui.desktop</span> and changing the section <code>exex</code> from
 
- <span class="quote">timeout_value</span> should be replaced with your desired time in seconds (ex: 12)
-						</li>
+<pre><code>sh -c 'ubiquity gtk_ui'</code></pre>
+
+to 
+
+<pre><code>sh -c 'sudo ubiquity gtk_ui'</code></pre>
+
+
+</li>						
+						
+						
 					</ol>
 
 <?php require_once('contribute-message.php'); ?>
@@ -317,7 +401,7 @@ fi
 					<h2><a id="authors--" class="anchor" href="#authors--" aria-hidden="true"><span class="octicon octicon-link"></span></a>Author: </h2>
 
 					<p>
-						Jahidul Hamid
+						Md. Jahidul Hamid
 					</p>
 					<p>
 						<a href="http://github.com/neurobin">http://github.com/neurobin</a>

@@ -10,7 +10,7 @@
 
 		<meta name="description" content="Universal Text Editor User Manual">
 		<meta name="keywords" content="uedit,neurobin,universal text editor,text editor" />
-		<title>Uedit User Manual @ Neurobin</title>
+		<title>Uedit User Manual<?php echo $titletag ?></title>
 
 	</head>
 	<body onload="startTime()">

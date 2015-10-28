@@ -9,7 +9,7 @@
 		?>
 		<meta name="description" content="Bulk rename utility">
 		<meta name="keywords" content="rename,bulk rename,rnm,linux,gnu,unix" />
-		<title>rnm @ Neurobin</title>
+		<title>Bulk rename utility for Linux/Unix<?php echo $titletag ?></title>
 
 	</head>
 	<body onload="startTime()">

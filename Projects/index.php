@@ -10,7 +10,7 @@
 		<meta name="description" content="Projects by Neurobin">
 		<meta name="keywords" content="neurobin, projects" />
 
-		<title>Projects@Neurobin</title>
+		<title>Projects<?php echo $titletag ?></title>
 
 	</head>
 	<body onload="startTime()">

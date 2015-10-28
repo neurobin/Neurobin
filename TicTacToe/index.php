@@ -9,7 +9,7 @@
 		?>
 		<meta name="description" content="Tic Tac Toe Game">
 		<meta name="keywords" content="tic tac toe,tic,tac,toe, games by neurobin,neurobin" />
-		<title>Tic Tac Toe@Neurobin</title>
+		<title>Tic Tac Toe<?php echo $titletag ?></title>
 		<link rel="shortcut icon" href="img/imwtictactoe.png" type="image/x-icon" />
 
 	</head>

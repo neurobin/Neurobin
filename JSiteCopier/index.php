@@ -9,7 +9,7 @@
 		?>
 		<meta name="description" content="Copy An Entire Website">
 		<meta name="keywords" content="website,copier,jsitecopy,linux,JSiteCopier" />
-		<title>JSiteCopier@Neurobin</title>
+		<title>Website copier<?php echo $titletag ?></title>
 
 	</head>
 	<body onload="startTime()">

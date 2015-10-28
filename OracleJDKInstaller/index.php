@@ -10,7 +10,7 @@
 		<meta name="description" content="Oracle JDK Installer">
 		<meta name="keywords" content="oracle, jdk, installer, linux" />
 
-		<title>Oraji@Neurobin</title>
+		<title>Oracle JDK Installer<?php echo $titletag ?></title>
 
 	</head>
 	<body onload="startTime()">

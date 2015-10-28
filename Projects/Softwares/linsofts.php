@@ -9,7 +9,7 @@
 
 		<meta name="description" content="Softwares for Linux">
 		<meta name="keywords" content="linux, softwares, shell, softs, software, soft" />
-		<title>Linux Softwares @ Neurobin</title>
+		<title>Linux Softwares<?php echo $titletag ?></title>
 
 	</head>
 	<body onload="startTime()">

@@ -9,7 +9,7 @@
 		?>
 		<meta name="description" content="Mediatek 7630E driver for Linux">
 		<meta name="keywords" content="mt7630e,linux driver,mediatek,ubuntu,linux" />
-		<title>MT7630E@Neurobin</title>
+		<title>MT7630E<?php echo $titletag ?></title>
 
 	</head>
 	<body onload="startTime()">
@@ -55,6 +55,7 @@
 		<div class="container" id="content-container2">
 			<div class="row">
 				<div class="col-xs-2" id="content-left">
+				<!--
 <style type="text/css">
 @import url(//www.google.com/cse/api/branding.css);
 </style>
@@ -79,7 +80,7 @@
     Custom Search
   </div>
 </div>
-		
+		-->
 				
 				</div>
 				<div class="col-xs-8 " id="content-soft">
@@ -113,6 +114,11 @@ To test it without installing, run:</p>
 To uninstall, run:</p>  
 
       <pre><code>./uninstall</code></pre>
+      
+         <p>
+To install it with dkms, run:</p>  
+
+      <pre><code>sudo make dkms</code></pre>
   
 <p>
 The driver will automatically load at startup.... </p> 
@@ -121,9 +127,11 @@ The driver will automatically load at startup.... </p>
 <ol>
 	<li><a href="https://github.com/neurobin">Neurobin</a> </li>
 	<li><a href="https://github.com/kuba-moo">kuba-moo</a> </li>
+	<li><a href="https://github.com/benjarobin">benjarobin</a></li>
 	<li><a href="https://github.com/anthonywong">anthonywong</a> </li>
 	<li><a href="https://github.com/sergeyksv">sergeyksv</a> </li>
 	<li><a href="https://github.com/tobiasBora">tobiasBora</a></li>
+	
 </ol>
 <p>And many more unsung heroes...</p>
 

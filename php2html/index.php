@@ -9,7 +9,7 @@
 		?>
 		<meta name="description" content="PHP To HTML Converter">
 		<meta name="keywords" content="php, to, html, converter,linux,windows" />
-		<title>PHP2HTML@Neurobin</title>
+		<title>PHP to HTML converter<?php echo $titletag ?></title>
 
 	</head>
 	<body onload="startTime()">

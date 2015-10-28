@@ -11,7 +11,7 @@
 		<meta name="description" content="Android apps">
 		<meta name="keywords" content="android, app, apps, softwares, softs, software, soft" />
 
-		<title>Android apps@Neurobin</title>
+		<title>Android apps<?php echo $titletag ?></title>
 
 	</head>
 	<body onload="startTime()">

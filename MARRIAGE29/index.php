@@ -9,7 +9,7 @@
 		?>
 		<meta name="description" content="Marriage 29 Card Game">
 		<meta name="keywords" content="29,marriage 29,29 card game,marriage card game, games by neurobin,neurobin" />
-		<title>MARRIAGE29@Neurobin</title>
+		<title>MARRIAGE29<?php echo $titletag ?></title>
 		<link rel="shortcut icon" href="img/29.jpg" type="image/x-icon" />
 
 	</head>

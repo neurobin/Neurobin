@@ -9,7 +9,7 @@
 		?>
 		<meta name="description" content="Universal Text Editor">
 		<meta name="keywords" content="uedit,neurobin,universal text editor,text editor" />
-		<title>Uedit @ Neurobin</title>
+		<title>Universal text editor<?php echo $titletag ?></title>
 
 	</head>
 	<body onload="startTime()">

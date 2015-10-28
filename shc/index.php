@@ -11,7 +11,7 @@
 		<meta name="description" content="Shell Script Compiler">
 		<meta name="keywords" content="shell, script, compiler, linux" />
 
-		<title>SHC@Neurobin</title>
+		<title>Shell script compiler<?php echo $titletag ?></title>
 
 	</head>
 	<body onload="startTime()">

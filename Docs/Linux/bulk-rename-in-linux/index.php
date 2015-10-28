@@ -1,6 +1,7 @@
 <?php 
-$curdir='Docs/Android/android-time-picker-example';
+$curdir='Docs/Linux/bulk-rename-in-linux';
 ?>
+
 <!DOCTYPE html>
 <html lang="en">
 	<head>
@@ -10,10 +11,10 @@ $curdir='Docs/Android/android-time-picker-example';
 		require_once 'head.php';
 		?>
 
-		<meta name="description" content="Android time picker example">
-		<meta name="keywords" content="neurobin, android, time picker, example" />
+		<meta name="description" content="Rename files folders/directories in bulk in Unix/Linux">
+		<meta name="keywords" content="rename files in linux, rename files folders in bulk in linux, bulk rename files in linux" />
 
-		<title>Android Time Picker Example in Android Studio<?php echo $titletag ?></title>
+		<title>Bulk rename files/directories in Linux<?php echo $titletag ?></title>
 
 	</head>
 	<body onload="startTime()">
@@ -31,11 +32,11 @@ $curdir='Docs/Android/android-time-picker-example';
 		<div class="container" id="showoff-soft">
 			<div class="row line-after">
 
-				<p class="tutorial-name">
-					Android Time Picker Example
-				</p>
+				<h1 class="tutorial-name">
+					Bulk rename files or directories in Linux
+				</h1>
 				<p class="tutorial-tagline">
-					<a class="disabled-link" id="applicable-to">IDE: </a> Android Studio
+					<a class="disabled-link" id="applicable-to">Applicable To: </a> Unix, Linux, All 32/64 bit Unix like OS.
 				</p>
 
 			</div>
@@ -45,10 +46,9 @@ $curdir='Docs/Android/android-time-picker-example';
 			<div class="row">
 				<div class="col-xs-12">
 					<div class="head-buttons">
-						<a href="https://github.com/Aapps/TimePicker">View On Github</a>
-						<a href="https://github.com/Aapps/TimePicker/archive/master.zip">Download .zip</a>
-						<a href="https://github.com/Aapps/TimePicker/archive/master.tar.gz">Download .tar.gz</a>
-
+					<?php require_once('utils.php');
+					deployGitDownloadButtons('neurobin','rnm','release');
+					?>
 					</div>
 				</div>
 			</div>
@@ -77,11 +77,9 @@ $curdir='Docs/Android/android-time-picker-example';
 <?php
 include "Parsedown.php";
 $parse=new Parsedown();
-$filename=$curdir."/objectives";
-echo  $parse->text(file_get_contents($filename));
-$filename=$curdir.'/content1';
-require_once('image-gallery.php');
-showCarousel($curdir.'/img','s1*','Time Picker Example by Neurobin');
+//$filename=$curdir."/objectives";
+//echo  $parse->text(file_get_contents($filename));
+$filename=$curdir.'/content1.md';
 echo  $parse->text(file_get_contents($filename));
 ?>
 				</div>

@@ -9,7 +9,7 @@
 
 		<meta name="description" content="Web Applications">
 		<meta name="keywords" content="neurobin, web, apps, web apps" />
-		<title>Web Apps @ Neurobin</title>
+		<title>Web Apps<?php echo $titletag ?></title>
 
 	</head>
 	<body onload="startTime()">

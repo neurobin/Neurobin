@@ -7,7 +7,7 @@
 		<meta name="description" content="Home Page@Neurobin">
 		<meta name="keywords" content="neurobin, c, c++, java, html, javascript, matlab, css, css3, shell, script, program, programming, languages, softwares, computers, software, app, apps, computer, binary, universe, macrocosm" />
 
-		<title>Home | Neurobin</title>
+		<title>Home<?php echo $titletag ?></title>
 		<meta name="description" content="A dwelling place for binary neurons">
       <meta name="keywords" content="neurobin, c, c++, java, html, javascript, matlab, css, css3, shell, script, program, programming, languages, softwares, computers, software, app, apps, computer,binary, universe, macrocosm, binary, softs, neuron, neural software, android, games">
   

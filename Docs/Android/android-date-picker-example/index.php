@@ -1,3 +1,6 @@
+<?php 
+$curdir='Docs/Android/android-date-picker-example';
+?>
 <!DOCTYPE html>
 <html lang="en">
 	<head>
@@ -10,7 +13,7 @@
 		<meta name="description" content="Android date picker example">
 		<meta name="keywords" content="neurobin, android, date picker, example" />
 
-		<title>Android Date Picker Example in Android Studio | Neurobin</title>
+		<title>Android Date Picker Example in Android Studio<?php echo $titletag ?></title>
 
 	</head>
 	<body onload="startTime()">
@@ -64,7 +67,7 @@
 							</p>
 					<?php
 					require_once ('content-index.php');
-					deployContentIndex('Docs/Android/android-date-picker-example/content-index');
+					deployContentIndex($curdir.'/content-index');
 					?>
 
 						</div>
@@ -74,11 +77,11 @@
 <?php
 include "Parsedown.php";
 $parse=new Parsedown();
-$filename="Docs/Android/android-date-picker-example/objectives";
+$filename=$curdir."/objectives";
 echo  $parse->text(file_get_contents($filename));
-$filename='Docs/Android/android-date-picker-example/content1';
+$filename=$curdir.'/content1';
 require_once('image-gallery.php');
-showCarousel('Docs/Android/android-date-picker-example/img','s1*','Date Picker Example by Neurobin');
+showCarousel($curdir.'/img','s1*','Date Picker Example by Neurobin');
 echo  $parse->text(file_get_contents($filename));
 ?>
 				</div>

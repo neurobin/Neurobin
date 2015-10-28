@@ -9,7 +9,7 @@
 		?>
 		<meta name="description" content="TAR to self-extracting shell script">
 		<meta name="keywords" content="self-extracting, shell, script, linux, archive, tar, bash, binary" />
-		<title>Tartos@Neurobin</title>
+		<title>Tar to shell script converter<?php echo $titletag ?></title>
 
 	</head>
 	<body onload="startTime()">

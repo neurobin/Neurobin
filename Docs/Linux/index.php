@@ -9,7 +9,7 @@
 		<meta name="description" content="Linux Tutorials by Neurobin">
 		<meta name="keywords" content="linux, tutorials" />
 
-		<title>Linux Tutorials@Neurobin</title>
+		<title>Linux Tutorials<?php echo $titletag ?></title>
 
 	</head>
 	<body onload="startTime()">
@@ -45,9 +45,11 @@
 				<div class="col-xs-2" id="content-left"></div>
 				<div class="col-xs-8" id="content-tutorial">
 					<ul>
-						<li>
-							<a href="Docs/Linux/how-to-install-softwares-in-linux.php">Installing Softwares In Linux</a>
-						</li>
+						<?php
+require_once('utils.php');
+scanDirAndSetAnchor('Docs/Linux');
+
+?>	
 
 					</ul>
 				</div>

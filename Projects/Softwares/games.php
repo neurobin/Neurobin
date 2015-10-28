@@ -11,7 +11,7 @@
 		<meta name="description" content="Games by Neurobin">
 		<meta name="keywords" content="games, softwares, Neurobin" />
 
-		<title>Games@Neurobin</title>
+		<title>Games<?php echo $titletag ?></title>
 
 	</head>
 	<body onload="startTime()">

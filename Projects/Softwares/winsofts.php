@@ -11,7 +11,7 @@
 		<meta name="description" content="Softwares for windows">
 		<meta name="keywords" content="windows, softwares, softs, software, soft, microsoft" />
 
-		<title>Windows Softwares @ Neurobin</title>
+		<title>Windows Softwares<?php echo $titletag ?></title>
 
 	</head>
 	<body onload="startTime()">
