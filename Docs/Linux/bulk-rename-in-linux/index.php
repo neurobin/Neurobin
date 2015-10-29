@@ -67,7 +67,7 @@ $curdir='Docs/Linux/bulk-rename-in-linux';
 							</p>
 					<?php
 					require_once ('content-index.php');
-					deployContentIndex($curdir.'/content-index');
+					deployIdedContentIndex($curdir.'/content-index');
 					?>
 
 						</div>
